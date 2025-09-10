@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Impression</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+        <div class="nav-left">
+           <ul>
+  <li><a href="#journey"><b>About</b></a></li>
+  <li><a href="#portfolio"><b>Portfolio</b></a></li>
+  <li><a href="#"><b>Testimonials</b></a></li>
+</ul>
+        </div>
+        <div class="nav-center">
+            <p><b>Pixelart_Impression</b></p>
+            <p>Wedding/Portrait Photographer</p>
+        </div>
+        <div class="nav-right">
+            <a href="#"><b>Gallery</b></a>
+           <div class="talk">
+            <a href="#">Let's Talk</a>
+           </div>
+        </div>
+    </div>
+    </header>
+
+<section>
+        <div class="front">
+  <h1 id="typewriter"></h1>
+  <p>Your vision, my lens - Perfection in every shot</p>
+  <a href="#journey"><em><b>Discover My Journey</b></em></a>
+</div>
+
+
+    <div class="pics">
+        <img src="img/first.jpg" alt="#" id="first">
+        <img src="img/second.jpg" alt="#" id="second">
+        <img src="img/third.jpg" alt="#" id="third">
+        <img src="img/fourth.jpeg" alt="#" id="fourth">
+    </div>
+</section>
+
+    <div class="journey" id="journey">
+        <div class="story">
+            <h2>Hello I'm PixelArt</h2>
+            <p><b>
+Sometimes I look back and smile at how far I’ve come.
+ I started photography from scratch — no fancy gear, 
+ no studio, just pure passion and curiosity. I remember the 
+ early days of experimenting, making mistakes,
+learning little by little, and falling in love with the 
+process of capturing moments. <br>
+Step by step, through dedication and consistency, 
+I’ve grown from those humble beginnings 
+into a professional photographer. 
+And I’m still growing, pushing myself to create 
+even more stunning, creative, and timeless images
+ for every client who trusts me.</b></p>
+        </div>
+
+        <div class="self">
+            <img src="img/Daniel.jpeg" alt="">
+        </div>
+    </div>
+
+    <div class="beautyshoot" id="portfolio">
+        <h3>Beauty Shoots</h3>
+        <div class="beauty">
+          <a href="#">
+          <img src="img/beauty/b5.jpeg" alt="1">
+          <img src="img/beauty/b2.jpeg" alt="2">
+          <img src="img/beauty/b8.jpeg" alt="3">
+          <img src="img/beauty/b4.jpeg" alt="4">
+          </a>
+        </div>
+
+        <div class="birthday">
+          <a href="#">
+            <img src="img/birthday/b1.jpeg" alt="1">
+            <img src="img/birthday/b4.jpeg" alt="2">
+            <img src="img/birthday/b5.jpeg" alt="3">
+            <img src="img/birthday/b6.jpeg" alt="4">
+          </a>
+        </div>
+    </div>
+
+    <script>
+const phrases = [
+  "Elegance in Every Frame.",
+  "Timeless. Refined. Captured.",
+  "Where Moments Become Art.",
+  "Framing Perfection.",
+  "Your Story, Beautifully Told.",
+  "Precision. Passion. Photography.",
+  "Capturing Grace, Creating Legacy."
+];
+
+let i = 0; 
+let j = 0; 
+let isDeleting = false;
+const target = document.getElementById("typewriter");
+const typingSpeed = 120; 
+const deletingSpeed = 60; 
+const pauseTime = 1200; 
+
+function type() {
+  const currentPhrase = phrases[i];
+
+  if (isDeleting) {
+    target.textContent = currentPhrase.substring(0, j--);
+  } else {
+    target.textContent = currentPhrase.substring(0, j++);
+  }
+
+  if (!isDeleting && j === currentPhrase.length + 1) {
+    isDeleting = true;
+    setTimeout(type, pauseTime); 
+    return;
+  }
+
+  if (isDeleting && j < 0) {
+    isDeleting = false;
+    i = (i + 1) % phrases.length; 
+  }
+
+  setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+}
+
+type();
+</script>
+
+</body>
+</html>
