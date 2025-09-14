@@ -350,10 +350,13 @@ h4 {
     height: auto;
 }
 
-.facebook p, .insta p, .x p, .whatsapp p, .email p{
+.facebook a, .insta a, .x a, .whatsapp p, .email p{
     margin: 0;
     font-size: 25px;
+    color: white;
+    text-decoration: none;
 }
+
 
 @media screen and (max-width: 768px) {
   .nav-bar {
