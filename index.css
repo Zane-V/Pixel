@@ -512,4 +512,25 @@ h4 {
   .facebook p, .insta p, .x p, .whatsapp p, .email p {
     font-size: 16px;
   }
+
+  .pics #first{
+    border: 2px solid white;
+}
+
+.pics #second{
+    border: 2px solid white;
+}
+
+.pics #third{
+    border: 2px solid white;
+}
+
+.pics #fourth{
+    border: 2px solid white;
+}
+
+.pics::before{
+    display: none;
+}
+
 }
