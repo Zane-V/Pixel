@@ -4,6 +4,11 @@
     font-family: Libre Baskerville;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
     margin: 0;
     height: 100vh;
@@ -87,9 +92,9 @@ body::after {
 }
 
 .nav-center p{
-    padding-bottom: 5px;
     font-size: larger;
     color: white;
+    margin-bottom: 0px;
 }
 
 .nav-right{
@@ -237,7 +242,7 @@ body::after {
     font-size: 20px;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+
     line-height: 40px;
     color: white;
     font-weight: 700;
@@ -250,101 +255,261 @@ body::after {
     transform: rotate(15deg);
 }
 
-.beautyshoot{
+h3{
     color: white;
-    padding: 20px 120px;
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+p{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.beautyshoot1, .beautyshoot2{
+    color: white;
+    padding: 20px 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.beautyshoot h3{
-     font-size: 40px;
-     margin-bottom: 50px;
+.beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding {
+    position: relative;
+    width: 350px;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
 }
 
-.beauty {
-      position: relative;
-      width: 350px;
-      height: 300px; 
-}
-    
-.beauty img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border: 4px solid white;
-      transition: transform 0.3s ease;
-      padding-left: 0;
-      margin-left: 0;
+.beauty img, .birthday img, .bridals img, .lifestyle img, .men img, .pregnancy img, .wedding img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 4px solid white;
+    transition: transform 0.3s ease;
 }
 
-.beauty img:nth-child(1) {
-      transform: rotate(-15deg) translate(-40px, 10px);
-      z-index: 1;
+.beauty img:hover, .birthday img:hover, .bridals img:hover, .lifestyle img:hover, .men img:hover, .pregnancy img:hover, .wedding img:hover {
+    transform: scale(1.1) rotate(0deg);
+    z-index: 10;
 }
 
-.beauty img:nth-child(2) {
-      transform: rotate(-5deg) translate(-20px, 5px);
-      z-index: 2;
-}
-    
-.beauty img:nth-child(3) {
-      transform: rotate(5deg) translate(20px, -5px);
-      z-index: 3;
+h4 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
 }
 
-.beauty img:nth-child(4) {
-      transform: rotate(15deg) translate(40px, -10px);
-      z-index: 4;
+.contact{
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 60px 150px;
+    display: flex;
+    gap: 20pc;
+    margin: 100px 150px;
+    height: 40vh;
 }
 
-.beauty img:hover {
-      transform: scale(1.1) rotate(0deg);
-      z-index: 10;
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
-.birthday {
-      position: relative;
-      width: 350px;
-      height: 300px; 
-}
-    
-.birthday img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      border: 4px solid white;
-      transition: transform 0.3s ease;
+.left p{
+    text-align: left;
+    line-height: 3pc;
 }
 
-.birthday img:nth-child(1) {
-      transform: rotate(-15deg) translate(-40px, 10px);
-      z-index: 1;
+.right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
+    justify-content: center;
 }
 
-.birthday img:nth-child(2) {
-      transform: rotate(-5deg) translate(-20px, 5px);
-      z-index: 2;
-}
-    
-.birthday img:nth-child(3) {
-      transform: rotate(5deg) translate(20px, -5px);
-      z-index: 3;
+.facebook, .insta, .x, .whatsapp, .email{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.birthday img:nth-child(4) {
-      transform: rotate(15deg) translate(40px, -10px);
-      z-index: 4;
+.facebook img, .insta img, .x img, .whatsapp img, .email img{
+    width: 50px;
+    height: auto;
 }
 
-.birthday img:hover {
-      transform: scale(1.1) rotate(0deg);
-      z-index: 10;
+.facebook p, .insta p, .x p, .whatsapp p, .email p{
+    margin: 0;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .nav-left ul {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .nav-center {
+    margin: 0;
+    text-align: center;
+  }
+
+  .nav-center p {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-right a {
+    font-size: 14px;
+  }
+
+  .talk a {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .front {
+    padding: 30px 15px;
+  }
+
+  .front h1 {
+    font-size: 20px;
+  }
+
+  .front p {
+    font-size: 14px;
+  }
+
+  .front a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .pics {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .pics img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .journey {
+    flex-direction: column;
+    margin: 20px 15px;
+    padding: 25px 15px;
+    gap: 30px;
+  }
+
+  .story h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .story p {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  .self img {
+    width: 100%;
+    transform: none;
+    border-radius: 12px;
+  }
+
+  h3 {
+    font-size: 28px;
+    margin: 20px 0 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0 10px 20px;
+  }
+
+  .beautyshoot1, .beautyshoot2 {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 40px;
+  }
+
+  .beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding {
+    width: 100%;
+  }
+
+  .beauty img,
+  .birthday img,
+  .bridals img,
+  .lifestyle img {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .contact {
+    flex-direction: column;
+    padding: 25px 15px;
+    margin: 30px 15px;
+    gap: 30px;
+    height: auto;
+  }
+
+  .left {
+    text-align: center;
+    gap: 10px;
+  }
+
+  .left p {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .right {
+    align-items: center;
+  }
+
+  .facebook, .insta, .x, .whatsapp, .email {
+    gap: 10px;
+  }
+
+  .facebook img, .insta img, .x img, .whatsapp img, .email img {
+    width: 28px;
+  }
+
+  .facebook p, .insta p, .x p, .whatsapp p, .email p {
+    font-size: 16px;
+  }
 }
