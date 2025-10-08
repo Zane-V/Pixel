@@ -57,7 +57,7 @@ body::after {
     100% { opacity: 0; }
 }
 
-.beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding{
+.beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding, .brands{
     .beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding {
     margin: 30px auto;
     padding: 0 20px;
@@ -67,25 +67,25 @@ body::after {
 
 }
 
-.beauty h2, .birthday h2, .bridals h2, .lifestyle h2, .men h2, .pregnancy h2, .wedding h2{
+.beauty h2, .birthday h2, .bridals h2, .lifestyle h2, .men h2, .pregnancy h2, .wedding h2, .brands h2{
     font-size: 50px;
     padding: 20px 0px 0px 120px;
 }
 
-.beauty p, .birthday p, .bridals p, .lifestyle p, .men p, .pregnancy p, .wedding p{
+.beauty p, .birthday p, .bridals p, .lifestyle p, .men p, .pregnancy p, .wedding p, .brands p{
     font-size: 20px;
     padding-bottom: 20px;
     padding: 0px 0px 20px 120px;
 }
 
-.beauty_pics, .birthday_pics, .bridal_pics, .lifestyle_pics, .men_pics, .pregnancy_pics, .wedding_pics{
+.beauty_pics, .birthday_pics, .bridal_pics, .lifestyle_pics, .men_pics, .pregnancy_pics, .wedding_pics, .brand_pics{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
 
-.beauty_pics img, .birthday_pics img, .bridal_pics img, .lifestyle_pics img, .men_pics img, .pregnancy_pics img, .wedding_pics img{
+.beauty_pics img, .birthday_pics img, .bridal_pics img, .lifestyle_pics img, .men_pics img, .pregnancy_pics img, .wedding_pics img, .brand_pics img{
     border: 4px solid white;
     border-radius: 20px;
     width: 100%;
@@ -98,21 +98,21 @@ body::after {
 }
 
 @media (max-width: 768px) {
-    .beauty h2, .birthday h2, .bridals h2, .lifestyle h2, .men h2, .pregnancy h2, .wedding h2 {
+    .beauty h2, .birthday h2, .bridals h2, .lifestyle h2, .men h2, .pregnancy h2, .wedding h2, .brands h2 {
         font-size: 32px;
     }
 
-    .beauty p, .birthday p, .bridals p, .lifestyle p, .men p, .pregnancy p, .wedding p {
+    .beauty p, .birthday p, .bridals p, .lifestyle p, .men p, .pregnancy p, .wedding p, .brands p {
         font-size: 16px;
     }
 
-    .beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding {
+    .beauty, .birthday, .bridals, .lifestyle, .men, .pregnancy, .wedding, .brands {
         padding: 0 10px;
     }
 }
 
 
-.beauty_pics img:hover, .birthday_pics img:hover, .bridal_pics img:hover, .lifestyle_pics img:hover, .men_pics img:hover, .pregnancy_pics img:hover, .wedding_pics img:hover{
+.beauty_pics img:hover, .birthday_pics img:hover, .bridal_pics img:hover, .lifestyle_pics img:hover, .men_pics img:hover, .pregnancy_pics img:hover, .wedding_pics img:hover, .brand_pics img:hover{
     transform: scale(1.1) rotate(0deg);
     z-index: 10;
 }
