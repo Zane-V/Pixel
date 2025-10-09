@@ -192,6 +192,8 @@ even more stunning, creative, and timeless images
           </div>
         </div>
 
+        <div class="cursor-spot"></div>
+
       </div>
   
 
@@ -250,12 +252,38 @@ type();
     menu.classList.toggle("show");
   });
 
-  // Optional: close menu if you click outside
   window.addEventListener("click", (e) => {
     if (!btn.contains(e.target) && !menu.contains(e.target)) {
       menu.classList.remove("show");
     }
   });
+
+  //Cursor spot
+   const spot = document.querySelector('.cursor-spot');
+  let hue = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    hue = (hue + 5) % 360; 
+    const color = `hsl(${hue}, 100%, 60%)`;
+
+    spot.style.background = color;
+    spot.style.boxShadow = `0 0 25px ${color}`;
+    spot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+
+    const trail = document.createElement('div');
+    trail.classList.add('trail');
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    trail.style.background = color;
+    trail.style.boxShadow = `0 0 20px ${color}`;
+    document.body.appendChild(trail);
+
+    setTimeout(() => {
+      trail.remove();
+    }, 600);
+  });
+
+
 </script>
 
 </body>
