@@ -26,6 +26,15 @@
            <div class="talk">
             <a href="#footer">Let's Talk</a>
            </div>
+           <ul>
+            <li><button id="menuBtn">&#9776;</button></li>
+            <div id="dropdownMenu" class="menu">
+                <!-- <a href="#journey">About</a> -->
+                <a href="#portfolio">Portfolio</a>
+                <a href="#footer">Contact</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+          </ul>
         </div>
     </div>
     </header>
@@ -232,6 +241,21 @@ function type() {
 }
 
 type();
+
+// Toggle Menu
+ const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("dropdownMenu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  // Optional: close menu if you click outside
+  window.addEventListener("click", (e) => {
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
 </script>
 
 </body>
