@@ -178,7 +178,8 @@ body::after {
     gap: 10px;
     position: relative;
     padding: 20px 120px;
-}
+    max-width: fit-content;
+  }
 
 .pics::before{
     content: "";
@@ -192,7 +193,7 @@ body::after {
 }
 
 .pics img{
-    width: 25%;
+    width: 20%;
     max-width: 100%;
     height: auto;
     flex: 1 1 200px;
@@ -204,25 +205,25 @@ body::after {
 }
 
 .pics #first{
-    border-left: 5px solid white;
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .pics #second{
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .pics #third{
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .pics #fourth{
-    border-bottom: 5px solid white;
-    border-top: 5px solid white;
-    border-right: 5px solid white;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
 }
 
 .journey{
@@ -246,21 +247,28 @@ body::after {
     font-size: 30px;
 }
 
+.story{
+  max-width: fit-content;
+}
+
 .story p{
-    font-size: 20px;
+    font-size: 25px;
     justify-content: center;
     align-items: center;
-
+    padding-top: 20px;
     line-height: 40px;
     color: white;
-    font-weight: 700;
+    /* font-weight: 700; */
+    width: 100%;
 }
 
 .self img{
     height: auto;
-    display: block;
+    /* display: block; */
     border: 1px solid white;
     transform: rotate(15deg);
+    /* width: 100%; */
+    /* max-width: 100%; */
 }
 
 h3{
@@ -319,11 +327,12 @@ h4 {
 .contact{
     border: 1px solid white;
     border-radius: 12px;
-    padding: 60px 150px;
+    padding: 60px 60px;
     display: flex;
-    gap: 20pc;
+    gap: 10pc;
     margin: 100px 150px;
     height: 40vh;
+    /* max-width: fit-content; */
 }
 
 .left{
@@ -337,6 +346,39 @@ h4 {
     text-align: left;
     line-height: 3pc;
 }
+
+.link{
+  text-align: center;
+}
+
+.link a{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px 20px 15px 20px;
+  font-size: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.link a:visited{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px;
+  font-size: 25px;
+  border-radius: 20px;
+}
+
+.link a:active{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px;
+  font-size: 25px;
+  border-radius: 20px;
+}
+
 
 .right{
     display: flex;
@@ -465,7 +507,7 @@ h4 {
   }
 
   .pics img {
-    width: 100%;
+    width: 25%;
     border-radius: 12px;
   }
 
@@ -541,7 +583,7 @@ h4 {
   }
 
   .left p {
-    font-size: 14px;
+    font-size:  18px;
     line-height: 24px;
     text-align: center;
   }
@@ -560,6 +602,7 @@ h4 {
 
   .facebook a, .insta a, .x a, .whatsapp p, .email p {
     font-size: 18px;
+    cursor: pointer;
   }
 
   .pics #first{
@@ -582,35 +625,46 @@ h4 {
     display: none;
 }
 
+.link{
+  text-align: center;
 }
 
- .cursor-spot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background: rgba(146, 41, 41, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s ease;
-  }
+.link a{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-   .trail {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background: rgba(0, 150, 255, 0.3);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
-    animation: fadeOut 0.6s linear forwards;
-  }
+.link a:visited{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+.link a:active{
+  color: white;
+  text-decoration: none;
+  background-color: #800517;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+
+
+
+}
 
   @keyframes fadeOut {
     from { opacity: 1; transform: scale(1) translate(-50%, -50%); }
     to { opacity: 0; transform: scale(0.5) translate(-50%, -50%); }
   }
+
+

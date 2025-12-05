@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book A Session - Pixelart_Impression</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+    <div class="main">
+        <h2>Session Details</h2>
+
+        <form class="form" action="https://formspree.io/f/xdkqdlzk" method="POST">
+            
+            <p>Name</p>
+            <input type="text" name="name" placeholder="Enter your name" required>
+
+            <p>Gender</p>
+            <input type="text" name="gender" placeholder="Enter your gender" required>
+
+            <p>Phone Number</p>
+            <input type="text" name="phone" placeholder="Enter your phone number" required>
+
+            <p>Occasion</p>
+            <input type="text" name="occasion" placeholder="Occasion type" required>
+
+            <p>Outfit Type</p>
+            <input type="text" name="outfit" placeholder="Traditional, casual, etc." required>
+
+            <p>Inspiration to Recreate</p>
+            <input type="text" name="inspiration" placeholder="Upload link or describe" required>
+
+            <p>Date for Shoot</p>
+            <input type="date" name="shoot_date" required>
+
+            <button type="submit">Submit</button>
+
+            <button onclick="goToPage()" id="button">Back</button>
+        </form>
+    </div>
+
+<script>
+  function goToPage() {
+    window.location.href = "index.html";
+  }
+  
+  document.querySelector("form").addEventListener("submit", function() {
+    this.reset();
+});
+</script>
+
+</body>
+</html>
