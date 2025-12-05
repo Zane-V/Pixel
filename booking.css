@@ -47,6 +47,20 @@ h2 {
     border-color: #000;
 }
 
+select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 15px;
+    background: #fff;
+}
+
 button {
     width: 100%;
     padding: 12px;
@@ -71,14 +85,9 @@ button {
     border: 1px solid black;
 }
 
-button:hover {
-    background: #333;
-}
-
-        /* Responsive */
 @media (max-width: 400px) {
     .main {
         width: 90%;
-        padding: 20px;
+        padding: 0px;
     }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book A Session - Pixelart_Impression</title>
     <link rel="stylesheet" href="booking.css">
+    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
 </head>
 
 <body>
@@ -34,6 +35,28 @@
             <p>Date for Shoot</p>
             <input type="date" name="shoot_date" required>
 
+            <p>Price listings</p>
+            <select name="price" required>
+    <option value="" disabled selected hidden>Select your affordable price</option>
+
+    <option value="35k - Indoor shoot, 1 outfit, 4 soft copies">
+        Indoor shoot, 1 outfit, 4 soft copies (35k)
+    </option>
+
+    <option value="40k - Indoor shoot, 2 outfits, 4 soft copies">
+        Indoor shoot, 2 outfits, 4 soft copies (40k)
+    </option>
+
+    <option value="45k - Indoor shoot, 3 outfits, 6 soft copies">
+        Indoor shoot, 3 outfits, 6 soft copies (45k)
+    </option>
+
+    <option value="50k - Studio shoot deluxe">
+        Studio shoot deluxe (50k)
+    </option>
+</select>
+
+
             <button type="submit">Submit</button>
 
             <button onclick="goToPage()" id="button">Back</button>
@@ -45,9 +68,6 @@
     window.location.href = "index.html";
   }
   
-  document.querySelector("form").addEventListener("submit", function() {
-    this.reset();
-});
 </script>
 
 </body>
