@@ -403,7 +403,7 @@ h4 {
     height: auto;
 }
 
-.facebook a, .insta a, .x a, .whatsapp a, .email p{
+.facebook a, .insta a, .x a, .whatsapp a, .email a{
     margin: 0;
     font-size: 25px;
     color: white;
