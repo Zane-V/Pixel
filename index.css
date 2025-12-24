@@ -324,22 +324,25 @@ h4 {
     color: white;
 }
 
-.contact{
+.contact {
     border: 1px solid white;
     border-radius: 12px;
-    padding: 60px 60px;
+    padding: 60px;
     display: flex;
-    gap: 10pc;
+    justify-content: space-between; /* Spreads content to edges */
+    align-items: center; 
     margin: 100px 150px;
-    height: 40vh;
-    /* max-width: fit-content; */
+    min-height: 300px; /* Instead of fixed 40vh, use min-height */
+    height: auto;      /* Allows container to grow if content wraps */
+    gap: 40px;         /* Smaller, manageable gap */
 }
 
-.left{
+.left {
+    flex: 1;           /* Takes up 50% of the space */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .left p{
@@ -380,12 +383,12 @@ h4 {
 }
 
 
-.right{
+.right {
+    flex: 1;           /* Takes up the other 50% */
     display: flex;
     flex-direction: column;
-    margin-left: 0;
-    padding-left: 0;
-    justify-content: center;
+    align-items: flex-start; /* Aligns social icons to the left of their container */
+    padding-left: 20px;
 }
 
 .facebook, .insta, .x, .whatsapp, .email{
@@ -400,7 +403,7 @@ h4 {
     height: auto;
 }
 
-.facebook a, .insta a, .x a, .whatsapp p, .email p{
+.facebook a, .insta a, .x a, .whatsapp a, .email p{
     margin: 0;
     font-size: 25px;
     color: white;
