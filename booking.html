@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a photography session with Pixelart Impression.">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:title" content="Book a Session — Pixelart Impression">
+    <meta property="og:type" content="website">
+    <title>Book a Session — Pixelart Impression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+</head>
+<body>
+<div class="cursor-spot" aria-hidden="true"></div>
+
+<div class="page-wrap">
+    <div class="booking-left" aria-hidden="true">
+        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Pixel">
+        <div class="bl-overlay"></div>
+        <div class="bl-content">
+            <div class="bl-logo">
+                <span class="logo-pixel">Pixel</span><span class="logo-art">art</span>
+            </div>
+            <p class="bl-tagline">"Your story, beautifully told."</p>
+        </div>
+    </div>
+
+    <div class="booking-right">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="booking-header">
+            <p class="section-label">// Reserve Your Session</p>
+            <h1>Book a Session</h1>
+            <p class="booking-sub">Fill in your details and I'll get back to you within 24 hours.</p>
+        </div>
+
+        <form class="booking-form" id="bookingForm" novalidate>
+            <div class="form-row">
+                <div class="field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected hidden>Select</option>
+                        <option>Female</option>
+                        <option>Male</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="phone">WhatsApp Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+234 000 000 0000" autocomplete="tel" required>
+                    <span class="field-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label for="occasion">Occasion Type</label>
+                    <input type="text" id="occasion" name="occasion" placeholder="Birthday, bridal, lifestyle…" required>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                    <label for="shoot_date">Preferred Date</label>
+                    <input type="date" id="shoot_date" name="shoot_date" required>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="outfit">Outfit Type</label>
+                <input type="text" id="outfit" name="outfit" placeholder="Traditional, casual, formal…" required>
+                    <span class="field-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+                <label for="inspiration">Inspiration / Reference</label>
+                <input type="text" id="inspiration" name="inspiration" placeholder="Paste a link or describe your vision" required>
+                    <span class="field-error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+                <label for="price">Package</label>
+                <select id="price" name="price" required>
+                    <option value="" disabled selected hidden>Select a package</option>
+                    <option value="Indoor shoot, 3 edited photos, studio background (30k/outfit)">Indoor — Studio background, 3 edited photos (₦30k/outfit)</option>
+                    <option value="Indoor shoot, 3 edited photos, aesthetic background (40k/outfit)">Indoor — Aesthetic background, 3 edited photos (₦40k/outfit)</option>
+                    <option value="Outdoor shoot, 4 edited photos (50k/outfit)">Outdoor — 4 edited photos (₦50k/outfit)</option>
+                    <option value="Children indoor session, 3 edited photos (30k/outfit)">Children's Indoor — 3 edited photos (₦30k/outfit)</option>
+                </select>
+                    <span class="field-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Booking Request</button>
+            <button type="button" id="backBtn" class="back-btn">← Go Back</button>
+        </form>
+    </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+document.getElementById("backBtn").addEventListener("click", () => history.back());
+
+/* ── Inline field validation ── */
+function showError(input, msg) {
+    const err = input.closest('.field').querySelector('.field-error');
+    if (err) { err.textContent = msg; input.setAttribute('aria-invalid', 'true'); }
+}
+function clearError(input) {
+    const err = input.closest('.field') && input.closest('.field').querySelector('.field-error');
+    if (err) { err.textContent = ''; input.removeAttribute('aria-invalid'); }
+}
+document.querySelectorAll('#bookingForm input, #bookingForm select').forEach(input => {
+    input.addEventListener('blur', () => {
+        if (input.required && !input.value.trim()) {
+            showError(input, 'This field is required.');
+        } else {
+            clearError(input);
+        }
+    });
+    input.addEventListener('input', () => clearError(input));
+});
+
+/* ── Date: prevent past dates ── */
+const dateInput = document.getElementById('shoot_date');
+if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+}
+
+/* ── AJAX Form Submission ── */
+const bookingForm = document.getElementById('bookingForm');
+bookingForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Validate all required fields before sending
+    let hasError = false;
+    bookingForm.querySelectorAll('[required]').forEach(input => {
+        if (!input.value.trim()) {
+            showError(input, 'This field is required.');
+            hasError = true;
+        }
+    });
+    if (hasError) return;
+
+    const btn = bookingForm.querySelector('.submit-btn');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('https://formspree.io/f/xdkqdlzk', {
+            method: 'POST',
+            body: new FormData(bookingForm),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            window.location.href = 'thank-you.html';
+        } else {
+            const data = await res.json().catch(() => ({}));
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert(data.error || 'Something went wrong. Please try again.');
+        }
+    } catch (err) {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Network error. Please check your connection and try again.');
+    }
+});
+</script>
+</body>
+</html>
