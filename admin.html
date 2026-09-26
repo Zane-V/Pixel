@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#f1f1ee">
+    <title>Studio | Pixelart Impression</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpeg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="admin.css">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('px-theme');if(t)d.dataset.theme=t}catch(e){}})()</script>
+</head>
+<body>
+
+<header class="admin-top">
+    <a href="index.html" class="wordmark" aria-label="Pixelart Impression, home">
+        <span class="wm" aria-hidden="true">p<span class="wm-i">ı</span>xelart</span><span class="wm-sub" aria-hidden="true">studio</span>
+    </a>
+    <div class="admin-top-actions">
+        <a href="gallery.html" class="btn btn-ghost admin-small" id="viewSite" hidden>View gallery</a>
+        <button class="btn btn-ghost admin-small" id="signOut" type="button" hidden>Sign out</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <svg class="icon i-moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+            <svg class="icon i-sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+    </div>
+</header>
+
+<!-- SIGN IN -->
+<main class="admin-view" id="loginView" hidden>
+    <form class="login" id="loginForm">
+        <h1 class="display">Studio <em>sign in</em></h1>
+        <p class="lead">Only for Daniel. Upload new work straight into the gallery.</p>
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+        <p class="form-status" id="loginStatus" role="alert"></p>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</main>
+
+<!-- DASHBOARD -->
+<main class="admin-view" id="dashView" hidden>
+    <section class="panel" aria-labelledby="uploadTitle">
+        <h1 class="display" id="uploadTitle">Add to the <em>gallery</em></h1>
+
+        <fieldset class="cats">
+            <legend>1. File under</legend>
+            <div class="cat-pills" id="catPills"></div>
+        </fieldset>
+
+        <div class="step">
+            <p class="step-label">2. Choose photos</p>
+            <label class="drop" id="drop">
+                <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+                <span class="drop-title">Drop photos here, or <u>browse</u></span>
+                <span class="drop-note">JPEG, PNG or WebP. Large photos are resized to 2400px before upload.</span>
+            </label>
+        </div>
+
+        <ul class="queue" id="queue" aria-live="polite"></ul>
+
+        <p class="form-status" id="uploadStatus" role="alert"></p>
+        <button class="btn btn-primary upload-btn" id="uploadBtn" type="button" disabled>Upload</button>
+    </section>
+
+    <section class="panel" aria-labelledby="libTitle">
+        <div class="lib-head">
+            <h2 class="display" id="libTitle">Your uploads</h2>
+            <span class="lib-count" id="libCount"></span>
+        </div>
+        <p class="lib-note">These show first in their category on the gallery, and join the rotating photos on the home and booking pages. The original portfolio photos stay as they are.</p>
+        <div id="library"></div>
+    </section>
+</main>
+
+<script src="photos.js"></script>
+<script src="shared.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

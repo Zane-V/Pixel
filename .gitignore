@@ -1,0 +1,10 @@
+node_modules/
+.vercel/
+.env*
+.playwright-mcp/
+
+# Local design/AI tooling (kept on this machine, not in the repo)
+.claude/
+.impeccable/
+.mcp.json
+skills-lock.json

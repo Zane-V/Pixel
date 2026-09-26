@@ -55,46 +55,76 @@
 }
 
 /* ── Sections ── */
-main { padding: 0 var(--gutter) clamp(72px, 9vw, 128px); }
+main { --cols: 4; --gap: 12px; padding: 0 var(--gutter) clamp(72px, 9vw, 128px); min-height: 60vh; }
 
 .gal-section {
     max-width: var(--maxw); margin: 0 auto;
     padding: clamp(56px, 7vw, 96px) 0 0;
     scroll-margin-top: 70px;   /* the category strip; html scroll-padding covers the header */
+    container-type: inline-size;
 }
 .gal-section.is-entering { animation: sectionIn 500ms var(--ease-out); }
 @keyframes sectionIn { from { opacity: 0; transform: translateY(12px); } }
 
 .gal-section-header {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas: "title count" "quote quote";
     align-items: baseline;
     column-gap: 24px;
     padding-top: 20px;
-    border-top: 1px solid var(--ink);
     margin-bottom: 28px;
 }
+/* The rule draws across as the header scrolls in */
+.gal-section-header::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: var(--ink);
+    transform-origin: left;
+}
+.js .gal-section-header::before { transform: scaleX(0); transition: transform 1100ms var(--ease-in-out); }
+.js .gal-section-header.visible::before { transform: none; }
 .gal-section-header h2 { grid-area: title; font-size: clamp(34px, 4.4vw, 64px); }
 .gal-count { grid-area: count; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .gal-section-header p { grid-area: quote; margin-top: 12px; font-size: 16px; color: var(--muted); font-style: italic; max-width: 56ch; }
 
-/* Masonry columns */
-.gal-grid { columns: 4 240px; column-gap: 12px; }
-.gal-grid img {
-    width: 100%; height: auto;
-    break-inside: avoid;
-    margin-bottom: 12px;
+/* Editorial grid: 4:5 cells in reading order; a 2×2 feature leads each block and
+   swaps sides down the page (placement is planned in gallery.js). */
+.gal-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    grid-auto-rows: calc((100cqi - (var(--cols) - 1) * var(--gap)) / var(--cols) * 1.25);
+    grid-auto-flow: dense;
+    gap: var(--gap);
+}
+.tile {
+    position: relative; display: block;
+    overflow: hidden;
+    padding: 0; border: 0;
     background: var(--surface);
     cursor: zoom-in;
-    transition: opacity 600ms var(--ease-out), transform 160ms var(--ease-out), filter 300ms ease;
+    transition: transform 160ms var(--ease-out);
 }
-.js .gal-grid img { opacity: 0; }
-.js .gal-grid img.is-loaded { opacity: 1; }
-.gal-grid img:active { transform: scale(0.985); }
-.gal-grid img:focus-visible { outline-offset: 2px; }
+.tile.is-feature { grid-column: span 2; grid-row: span 2; }
+.tile.is-feature.is-end { grid-column: -3 / -1; }
+.tile img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: opacity 600ms var(--ease-out), transform 1500ms var(--ease-out), filter 300ms ease;
+}
+.js .tile img { opacity: 0; }
+.js .tile img.is-loaded { opacity: 1; }
+.tile:active { transform: scale(0.985); }
+.tile:focus-visible { outline-offset: 2px; }
+/* Merge the scroll reveal (base.css) with the photo's load fade and hover dim */
+.js .tile.reveal-photo > img {
+    transition: opacity 600ms var(--ease-out),
+                clip-path 1100ms var(--ease-in-out) calc(var(--i, 0) * 70ms),
+                transform 1500ms var(--ease-out) calc(var(--i, 0) * 70ms),
+                filter 300ms ease;
+}
 @media (hover: hover) and (pointer: fine) {
-    .gal-grid:hover img.is-loaded:not(:hover) { filter: saturate(0.6) brightness(0.92); }
+    .gal-grid:hover .tile:not(:hover) img.is-loaded { filter: saturate(0.6) brightness(0.92); }
+    .js .tile.visible:hover > img { transform: scale(1.04); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out), filter 300ms ease; }
 }
 
 /* ── Lightbox: always dark, photos read best on black ── */
@@ -143,11 +173,10 @@ main { padding: 0 var(--gutter) clamp(72px, 9vw, 128px); }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-    .gal-grid { columns: 3 180px; }
+    main { --cols: 3; }
 }
 @media (max-width: 560px) {
-    .gal-grid { columns: 2 140px; column-gap: 8px; }
-    .gal-grid img { margin-bottom: 8px; }
+    main { --cols: 2; --gap: 8px; }
     .lb-prev, .lb-next { top: auto; bottom: 14px; margin-top: 0; width: 46px; height: 46px; }
     .lb-prev { left: 16px; } .lb-next { right: 16px; }
     .lb-counter { bottom: 30px; }
@@ -157,4 +186,7 @@ main { padding: 0 var(--gutter) clamp(72px, 9vw, 128px); }
 @media (prefers-reduced-motion: reduce) {
     .js .gallery-hero-inner > * { transform: none; transition: opacity 400ms ease; }
     #lbImg, #lightbox.open #lbImg { transform: none; }
+    .js .gal-section-header::before { transform: none; }
+    .js .tile.reveal-photo > img { transition: opacity 500ms ease; }
+    .js .tile.reveal-photo > img, .js .tile.visible:hover > img { transform: none; }
 }

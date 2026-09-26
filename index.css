@@ -66,7 +66,7 @@
 .js .chip { clip-path: inset(0 100% 0 0); transition: clip-path 700ms var(--ease-in-out) 550ms; }
 .js .hero-meta { opacity: 0; transform: translateY(12px); transition: opacity 700ms var(--ease-out) 300ms, transform 700ms var(--ease-out) 300ms; }
 .js .hb { clip-path: inset(100% 0 0 0); transition: clip-path 1000ms var(--ease-in-out); }
-.js .hb img { transform: scale(1.12); transition: transform 1400ms var(--ease-out); }
+.js .hb img { transform: scale(1.12); transition: transform 1400ms var(--ease-out), opacity 1400ms var(--ease-in-out); }
 .js .hb-1, .js .hb-1 img { transition-delay: 200ms; }
 .js .hb-2, .js .hb-2 img { transition-delay: 280ms; }
 .js .hb-3, .js .hb-3 img { transition-delay: 360ms; }
@@ -96,7 +96,7 @@
     border-top: 1px solid var(--ink);
 }
 .fact + .fact { padding-left: 24px; }
-.fact-num { font-size: clamp(36px, 4.2vw, 60px); }
+.fact-num { font-size: clamp(36px, 4.2vw, 60px); font-variant-numeric: tabular-nums; }
 .fact-label { font-size: 15px; color: var(--muted); }
 
 
@@ -122,7 +122,7 @@
     margin-top: clamp(56px, 7vw, 112px);
     align-items: end;
 }
-.about-portrait { grid-column: 1 / span 5; background: var(--surface); }
+.about-portrait { grid-column: 1 / span 5; background: var(--surface); overflow: hidden; }
 .about-portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.05); }
 .about-text { grid-column: 7 / span 6; max-width: 54ch; }
 .about-title {
