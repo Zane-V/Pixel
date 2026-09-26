@@ -3,44 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book a photography session with Pixelart Impression.">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Book a Session — Pixelart Impression">
+    <meta name="description" content="Book a photography session with Pixelart Impression in Uyo.">
+    <meta name="theme-color" content="#f1f1ee">
+    <meta property="og:title" content="Book a Session | Pixelart Impression">
     <meta property="og:type" content="website">
-    <title>Book a Session — Pixelart Impression</title>
+    <title>Book a Session | Pixelart Impression</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpeg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="booking.css">
-    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('px-theme');if(t)d.dataset.theme=t}catch(e){}})()</script>
 </head>
 <body>
-<div class="cursor-spot" aria-hidden="true"></div>
-
 <div class="page-wrap">
-    <div class="booking-left" aria-hidden="true">
-        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Pixel">
-        <div class="bl-overlay"></div>
-        <div class="bl-content">
-            <div class="bl-logo">
-                <span class="logo-pixel">Pixel</span><span class="logo-art">art</span>
-            </div>
-            <p class="bl-tagline">"Your story, beautifully told."</p>
+    <div class="booking-visual" aria-hidden="true">
+        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1200/v1773508850/b1_twqqoj.jpg" alt="">
+        <div class="bv-content">
+            <span class="wordmark"><span class="wm">p<span class="wm-i">ı</span>xelart</span></span>
+            <p class="bv-tagline">Your story, <em>beautifully</em> told.</p>
         </div>
     </div>
 
-    <div class="booking-right">
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <main class="booking-main">
+        <div class="booking-top">
+            <a href="index.html" class="back-link"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-left"/></svg> Back to Home</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+                <svg class="icon i-moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+                <svg class="icon i-sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+            </button>
+        </div>
 
         <div class="booking-header">
-            <p class="section-label">// Reserve Your Session</p>
-            <h1>Book a Session</h1>
-            <p class="booking-sub">Fill in your details and I'll get back to you within 24 hours.</p>
+            <h1 class="display">Book a <em>Session</em></h1>
+            <p class="lead">Fill in your details and I'll get back to you within 24 hours.</p>
         </div>
 
         <form class="booking-form" id="bookingForm" novalidate>
             <div class="form-row">
                 <div class="field">
-                    <label for="name">Full Name</label>
+                    <label for="name">Full name</label>
                     <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
                     <span class="field-error" aria-live="polite"></span>
                 </div>
@@ -57,77 +61,109 @@
             </div>
 
             <div class="field">
-                <label for="phone">WhatsApp Number</label>
+                <label for="phone">WhatsApp number</label>
                 <input type="tel" id="phone" name="phone" placeholder="+234 000 000 0000" autocomplete="tel" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
             <div class="form-row">
                 <div class="field">
-                    <label for="occasion">Occasion Type</label>
+                    <label for="occasion">Occasion type</label>
                     <input type="text" id="occasion" name="occasion" placeholder="Birthday, bridal, lifestyle…" required>
                     <span class="field-error" aria-live="polite"></span>
                 </div>
                 <div class="field">
-                    <label for="shoot_date">Preferred Date</label>
+                    <label for="shoot_date">Preferred date</label>
                     <input type="date" id="shoot_date" name="shoot_date" required>
                     <span class="field-error" aria-live="polite"></span>
                 </div>
             </div>
 
             <div class="field">
-                <label for="outfit">Outfit Type</label>
+                <label for="outfit">Outfit type</label>
                 <input type="text" id="outfit" name="outfit" placeholder="Traditional, casual, formal…" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
             <div class="field">
-                <label for="inspiration">Inspiration / Reference</label>
+                <label for="inspiration">Inspiration or reference</label>
                 <input type="text" id="inspiration" name="inspiration" placeholder="Paste a link or describe your vision" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
-            <div class="field">
-                <label for="price">Package</label>
-                <select id="price" name="price" required>
-                    <option value="" disabled selected hidden>Select a package</option>
-                    <option value="Indoor shoot, 3 edited photos, studio background (30k/outfit)">Indoor — Studio background, 3 edited photos (₦30k/outfit)</option>
-                    <option value="Indoor shoot, 3 edited photos, aesthetic background (40k/outfit)">Indoor — Aesthetic background, 3 edited photos (₦40k/outfit)</option>
-                    <option value="Outdoor shoot, 4 edited photos (50k/outfit)">Outdoor — 4 edited photos (₦50k/outfit)</option>
-                    <option value="Children indoor session, 3 edited photos (30k/outfit)">Children's Indoor — 3 edited photos (₦30k/outfit)</option>
-                </select>
-                    <span class="field-error" aria-live="polite"></span>
-            </div>
+            <fieldset class="field packages" id="packages">
+                <legend>Package</legend>
+                <div class="package-grid">
+                    <label class="package">
+                        <input type="radio" name="price" value="Indoor shoot, 3 edited photos, studio background (30k/outfit)" required>
+                        <span class="package-name">Indoor, studio background</span>
+                        <span class="package-detail">3 edited photos</span>
+                        <span class="package-price">₦30k <small>per outfit</small></span>
+                    </label>
+                    <label class="package">
+                        <input type="radio" name="price" value="Indoor shoot, 3 edited photos, aesthetic background (40k/outfit)">
+                        <span class="package-name">Indoor, aesthetic background</span>
+                        <span class="package-detail">3 edited photos</span>
+                        <span class="package-price">₦40k <small>per outfit</small></span>
+                    </label>
+                    <label class="package">
+                        <input type="radio" name="price" value="Outdoor shoot, 4 edited photos (50k/outfit)">
+                        <span class="package-name">Outdoor</span>
+                        <span class="package-detail">4 edited photos</span>
+                        <span class="package-price">₦50k <small>per outfit</small></span>
+                    </label>
+                    <label class="package">
+                        <input type="radio" name="price" value="Children indoor session, 3 edited photos (30k/outfit)">
+                        <span class="package-name">Children's indoor</span>
+                        <span class="package-detail">3 edited photos</span>
+                        <span class="package-price">₦30k <small>per outfit</small></span>
+                    </label>
+                </div>
+                <span class="field-error" aria-live="polite"></span>
+            </fieldset>
 
-            <button type="submit" class="submit-btn">Submit Booking Request</button>
-            <button type="button" id="backBtn" class="back-btn">← Go Back</button>
+            <p class="form-status" id="formStatus" role="alert"></p>
+            <button type="submit" class="btn btn-primary submit-btn"><span class="submit-label">Submit Booking Request</span></button>
         </form>
-    </div>
+    </main>
 </div>
 
 <script src="shared.js"></script>
 <script>
-document.getElementById("backBtn").addEventListener("click", () => history.back());
+const bookingForm = document.getElementById('bookingForm');
+const packages = document.getElementById('packages');
 
 /* ── Inline field validation ── */
+function errorFor(input) {
+    const box = input.closest('.field');
+    return box && box.querySelector('.field-error');
+}
 function showError(input, msg) {
-    const err = input.closest('.field').querySelector('.field-error');
-    if (err) { err.textContent = msg; input.setAttribute('aria-invalid', 'true'); }
+    const err = errorFor(input);
+    if (!err) return;
+    err.textContent = msg;
+    if (input.type === 'radio') packages.classList.add('is-invalid');
+    else input.setAttribute('aria-invalid', 'true');
 }
 function clearError(input) {
-    const err = input.closest('.field') && input.closest('.field').querySelector('.field-error');
-    if (err) { err.textContent = ''; input.removeAttribute('aria-invalid'); }
+    const err = errorFor(input);
+    if (!err) return;
+    err.textContent = '';
+    if (input.type === 'radio') packages.classList.remove('is-invalid');
+    else input.removeAttribute('aria-invalid');
 }
-document.querySelectorAll('#bookingForm input, #bookingForm select').forEach(input => {
+function isEmpty(input) {
+    if (input.type === 'radio') return !bookingForm.querySelector(`input[name="${input.name}"]:checked`);
+    return !input.value.trim();
+}
+bookingForm.querySelectorAll('input:not([type="radio"]), select').forEach(input => {
     input.addEventListener('blur', () => {
-        if (input.required && !input.value.trim()) {
-            showError(input, 'This field is required.');
-        } else {
-            clearError(input);
-        }
+        if (input.required && isEmpty(input)) showError(input, 'This field is required.');
+        else clearError(input);
     });
     input.addEventListener('input', () => clearError(input));
 });
+packages.addEventListener('change', e => clearError(e.target));
 
 /* ── Date: prevent past dates ── */
 const dateInput = document.getElementById('shoot_date');
@@ -137,23 +173,32 @@ if (dateInput) {
 }
 
 /* ── AJAX Form Submission ── */
-const bookingForm = document.getElementById('bookingForm');
 bookingForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
     // Validate all required fields before sending
-    let hasError = false;
+    let firstInvalid = null;
     bookingForm.querySelectorAll('[required]').forEach(input => {
-        if (!input.value.trim()) {
-            showError(input, 'This field is required.');
-            hasError = true;
+        if (isEmpty(input)) {
+            showError(input, input.type === 'radio' ? 'Please choose a package.' : 'This field is required.');
+            firstInvalid = firstInvalid || input;
         }
     });
-    if (hasError) return;
+    if (firstInvalid) { firstInvalid.focus(); return; }
 
-    const btn = bookingForm.querySelector('.submit-btn');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending…';
+    const btn    = bookingForm.querySelector('.submit-btn');
+    const label  = btn.querySelector('.submit-label');
+    const status = document.getElementById('formStatus');
+    const originalText = label.textContent;
+    function fail(msg) {
+        btn.classList.remove('is-sending');
+        label.textContent = originalText;
+        btn.disabled = false;
+        status.textContent = msg;
+    }
+    status.textContent = '';
+    label.textContent = 'Sending…';
+    btn.classList.add('is-sending');
     btn.disabled = true;
 
     try {
@@ -166,14 +211,10 @@ bookingForm.addEventListener('submit', async function(e) {
             window.location.href = 'thank-you.html';
         } else {
             const data = await res.json().catch(() => ({}));
-            btn.textContent = originalText;
-            btn.disabled = false;
-            alert(data.error || 'Something went wrong. Please try again.');
+            fail(data.error || 'Something went wrong. Please try again.');
         }
     } catch (err) {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        alert('Network error. Please check your connection and try again.');
+        fail('Network error. Please check your connection and try again.');
     }
 });
 </script>

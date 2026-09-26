@@ -3,269 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixelart Impression Gallery — Browse all photography categories.">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Gallery — Pixelart Impression">
+    <meta name="description" content="Pixelart Impression gallery. Beauty, bridal, birthday, men, maternity, lifestyle and wedding photography in Uyo.">
+    <meta name="theme-color" content="#f1f1ee">
+    <meta property="og:title" content="Gallery | Pixelart Impression">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Browse all photography categories — Beauty, Bridals, Weddings, and more.">
-    <title>Gallery — Pixelart Impression</title>
+    <meta property="og:description" content="Browse all photography categories: Beauty, Bridals, Weddings, and more.">
+    <title>Gallery | Pixelart Impression</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpeg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="gallery.css">
-    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('px-theme');if(t)d.dataset.theme=t}catch(e){}})()</script>
 </head>
 <body>
-
-<!-- PRELOADER -->
-<div id="preloader" aria-hidden="true">
-    <div class="pre-content">
-        <div class="pre-logo"><span>P</span><span>I</span><span>X</span><span>E</span><span>L</span></div>
-        <div class="pre-line"><div class="pre-fill"></div></div>
-        <p class="pre-sub">Loading gallery...</p>
-    </div>
-</div>
-
-<!-- CURSOR -->
-<div class="cursor-spot" aria-hidden="true"></div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lb-backdrop"></div>
-    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">‹</button>
+    <button class="lb-close" id="lbClose" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-x"/></svg></button>
+    <button class="lb-prev"  id="lbPrev"  aria-label="Previous photo"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-caret-left"/></svg></button>
     <div class="lb-img-wrap">
         <img id="lbImg" src="" alt="Enlarged photo">
     </div>
-    <button class="lb-next"  id="lbNext"  aria-label="Next">›</button>
+    <button class="lb-next"  id="lbNext"  aria-label="Next photo"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-caret-right"/></svg></button>
     <div class="lb-counter" id="lbCounter" aria-live="polite"></div>
 </div>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp">
 <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp"> -->
-    <img src="img/whatsapp.png" alt="WhatsApp">
+    <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-whatsapp-logo"/></svg>
     <span class="wa-tip">Book via WhatsApp</span>
 </a>
 
 <!-- BACK TO TOP -->
-<button id="btt" aria-label="Back to top">↑</button>
+<button id="btt" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-up"/></svg></button>
 
 <!-- HEADER -->
 <header id="site-header">
     <div class="header-inner">
-        <div class="header-logo">
-            <a href="index.html">
-                <span class="logo-pixel">Pixel</span><span class="logo-art">art</span>
-                <span class="logo-sub">Impression</span>
-            </a>
-        </div>
-        <nav class="header-nav" aria-label="Navigation">
-            <a href="index.html">Home</a>
+        <a href="index.html" class="wordmark" aria-label="Pixelart Impression, home">
+            <span class="wm" aria-hidden="true">p<span class="wm-i">ı</span>xelart</span><span class="wm-sub" aria-hidden="true">impression</span>
+        </a>
+        <nav class="header-nav" aria-label="Main navigation">
             <a href="index.html#about">About</a>
             <a href="index.html#portfolio">Work</a>
-            <a href="booking.html" class="nav-cta">Book a Session</a>
+            <a href="gallery.html" aria-current="page">Gallery</a>
         </nav>
-        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <svg class="icon i-moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+            <svg class="icon i-sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <a href="booking.html" class="btn btn-primary header-cta">Book a Session</a>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span>
         </button>
     </div>
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <a href="index.html">Home</a>
         <a href="index.html#about">About</a>
         <a href="index.html#portfolio">Work</a>
-        <a href="booking.html" class="mob-book">Book a Session</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="booking.html" class="btn btn-primary">Book a Session</a>
     </div>
 </header>
 
 <!-- GALLERY HERO -->
 <div class="gallery-hero">
-    <p class="section-label">// Full Collection</p>
-    <h1 class="gallery-title-h1">The Gallery</h1>
-    <p class="gallery-hero-sub">Every image tells a story. Browse by category or scroll through it all.</p>
+    <div class="gallery-hero-inner">
+        <h1 class="gallery-title display">The <em>Gallery</em></h1>
+        <p class="lead">Every image tells a story. Browse by category or scroll through it all.</p>
+    </div>
 </div>
 
 <!-- CATEGORY STRIP -->
-<nav class="cat-strip" aria-label="Jump to category">
-    <button class="cat-btn active" data-target="all">All</button>
-    <button class="cat-btn" data-target="beauty-section">Beauty</button>
-    <button class="cat-btn" data-target="birthday-section">Birthdays</button>
-    <button class="cat-btn" data-target="bridals-section">Bridals</button>
-    <button class="cat-btn" data-target="lifestyle-section">Lifestyle</button>
-    <button class="cat-btn" data-target="men-section">Men</button>
-    <button class="cat-btn" data-target="pregnancy-section">Pregnancy</button>
-    <button class="cat-btn" data-target="wedding-section">Wedding</button>
-    <!-- <button class="cat-btn" data-target="brands-section">Brands</button> -->
+<nav class="cat-strip" aria-label="Filter by category">
+    <div class="cat-track">
+    <button class="cat-btn active" data-target="all" aria-pressed="true">All</button>
+    <button class="cat-btn" data-target="beauty-section" aria-pressed="false">Beauty</button>
+    <button class="cat-btn" data-target="birthday-section" aria-pressed="false">Birthdays</button>
+    <button class="cat-btn" data-target="bridals-section" aria-pressed="false">Bridals</button>
+    <button class="cat-btn" data-target="lifestyle-section" aria-pressed="false">Lifestyle</button>
+    <button class="cat-btn" data-target="men-section" aria-pressed="false">Men</button>
+    <button class="cat-btn" data-target="pregnancy-section" aria-pressed="false">Pregnancy</button>
+    <button class="cat-btn" data-target="wedding-section" aria-pressed="false">Wedding</button>
+    <!-- <button class="cat-btn" data-target="brands-section" aria-pressed="false">Brands</button> -->
+    </div>
 </nav>
 
 <main>
 
     <section class="gal-section" id="beauty-section">
         <div class="gal-section-header">
-            <h2>Beauty</h2>
-            <p>"Glamour redefined in every frame — bold, unapologetic, timeless."</p>
+            <h2 class="display">Beauty</h2>
+            <p>“Glamour redefined in every frame: bold, unapologetic, timeless.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508412/b1_dtw8no.jpg"  alt="Beauty 1"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508415/b2_ub8xlr.jpg"  alt="Beauty 2"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508421/b3_an8uda.jpg"  alt="Beauty 3"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508425/b4_papulo.jpg"  alt="Beauty 4"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508428/b5_h706fv.jpg"  alt="Beauty 5"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508435/b6_hcfkxk.jpg"  alt="Beauty 6"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508439/b7_yvthwz.jpg"  alt="Beauty 7"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508439/b8_zwtx2o.jpg"  alt="Beauty 8"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508441/b9_ol5ib3.jpg"  alt="Beauty 9"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508443/b10_g6tn7j.jpg" alt="Beauty 10" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508445/b11_fxqlwv.jpg" alt="Beauty 11" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508447/b12_hdo8ip.jpg" alt="Beauty 12" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508448/b13_gbykkm.jpg" alt="Beauty 13" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508450/b14_ahedyn.jpg" alt="Beauty 14" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508451/b15_pnyur7.jpg" alt="Beauty 15" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508459/b16_ixbobs.jpg" alt="Beauty 16" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508460/b17_gdirak.jpg" alt="Beauty 17" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508465/b18_xwcmjo.jpg" alt="Beauty 18" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508468/b19_wjtepw.jpg" alt="Beauty 19" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508469/b20_rnozvd.jpg" alt="Beauty 20" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508480/b21_hfmrlu.jpg" alt="Beauty 21" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508481/b22_tyydzr.jpg" alt="Beauty 22" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508482/b23_hshqq4.jpg" alt="Beauty 23" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508412/b1_dtw8no.jpg"  alt="Beauty 1"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508415/b2_ub8xlr.jpg"  alt="Beauty 2"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508421/b3_an8uda.jpg"  alt="Beauty 3"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508425/b4_papulo.jpg"  alt="Beauty 4"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508428/b5_h706fv.jpg"  alt="Beauty 5"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508435/b6_hcfkxk.jpg"  alt="Beauty 6"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508439/b7_yvthwz.jpg"  alt="Beauty 7"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508439/b8_zwtx2o.jpg"  alt="Beauty 8"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508441/b9_ol5ib3.jpg"  alt="Beauty 9"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508443/b10_g6tn7j.jpg" alt="Beauty 10" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508445/b11_fxqlwv.jpg" alt="Beauty 11" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508447/b12_hdo8ip.jpg" alt="Beauty 12" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508448/b13_gbykkm.jpg" alt="Beauty 13" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508450/b14_ahedyn.jpg" alt="Beauty 14" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508451/b15_pnyur7.jpg" alt="Beauty 15" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508459/b16_ixbobs.jpg" alt="Beauty 16" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508460/b17_gdirak.jpg" alt="Beauty 17" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508465/b18_xwcmjo.jpg" alt="Beauty 18" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508468/b19_wjtepw.jpg" alt="Beauty 19" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508469/b20_rnozvd.jpg" alt="Beauty 20" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508480/b21_hfmrlu.jpg" alt="Beauty 21" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508481/b22_tyydzr.jpg" alt="Beauty 22" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508482/b23_hshqq4.jpg" alt="Beauty 23" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="birthday-section">
         <div class="gal-section-header">
-            <h2>Birthdays</h2>
-            <p>"Framed in love, lit by joy, edited with grace."</p>
+            <h2 class="display">Birthdays</h2>
+            <p>“Framed in love, lit by joy, edited with grace.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508648/b1_jkbinn.jpg" alt="Birthday 1" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508650/b2_rpsz0l.jpg" alt="Birthday 2" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508653/b3_pchvpl.jpg" alt="Birthday 3" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508655/b4_ckmhw5.jpg" alt="Birthday 4" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508695/b5_wchapk.jpg" alt="Birthday 5" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508699/b6_owxeyh.jpg" alt="Birthday 6" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508648/b1_jkbinn.jpg" alt="Birthday 1" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508650/b2_rpsz0l.jpg" alt="Birthday 2" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508653/b3_pchvpl.jpg" alt="Birthday 3" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508655/b4_ckmhw5.jpg" alt="Birthday 4" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508695/b5_wchapk.jpg" alt="Birthday 5" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508699/b6_owxeyh.jpg" alt="Birthday 6" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="bridals-section">
         <div class="gal-section-header">
-            <h2>Bridals</h2>
-            <p>"Just a bride, her dress, and a camera capturing forever."</p>
+            <h2 class="display">Bridals</h2>
+            <p>“Just a bride, her dress, and a camera capturing forever.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508850/b1_twqqoj.jpg"  alt="Bridal 1"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508852/b2_kozc97.jpg"  alt="Bridal 2"  loading="lazy">
-            <!-- <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508857/b3_wriuey.jpg"  alt="Bridal 3"  loading="lazy"> -->
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508857/b3_wriuey.jpg"  alt="Bridal 4"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508867/b5_uf3vxp.jpg"  alt="Bridal 5"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508869/b6_tkgrtl.jpg"  alt="Bridal 6"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508876/b7_ot9qci.jpg"  alt="Bridal 7"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508876/b8_oa577f.jpg"  alt="Bridal 8"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508887/b9_cvxgxq.jpg"  alt="Bridal 9"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508885/b10_fausoc.jpg" alt="Bridal 10" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508894/b11_saeat1.jpg" alt="Bridal 11" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508893/b12_m7ifeb.jpg" alt="Bridal 12" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508900/b13_hohnzp.jpg" alt="Bridal 13" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508900/b14_kqyhjh.jpg" alt="Bridal 14" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508908/b15_irih4p.jpg" alt="Bridal 15" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508908/b16_mnrctg.jpg" alt="Bridal 16" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508921/b17_tlmoqg.jpg" alt="Bridal 17" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508923/b18_yq0zrm.jpg" alt="Bridal 18" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508935/b19_ngzbdi.jpg" alt="Bridal 19" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508932/b20_qbi1jm.jpg" alt="Bridal 20" loading="lazy">
-            <!-- <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508936/b21_cw4qur.jpg" alt="Bridal 21" loading="lazy"> -->
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508936/b21_cw4qur.jpg" alt="Bridal 22" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508944/b22_mj1txb.jpg" alt="Bridal 23" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508949/b24_au1rpo.jpg" alt="Bridal 24" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508949/b25_xvvkba.jpg" alt="Bridal 25" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508956/b26_nmxogb.jpg" alt="Bridal 26" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508959/b27_hvac3p.jpg" alt="Bridal 27" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508966/b28_r6lxzi.jpg" alt="Bridal 28" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508969/b29_t5i952.jpg" alt="Bridal 29" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508978/b30_brobyx.jpg" alt="Bridal 30" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508978/b31_r8emny.jpg" alt="Bridal 31" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508987/b32_pgseu9.jpg" alt="Bridal 32" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508986/b33_ah6lgx.jpg" alt="Bridal 33" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508994/b34_d4mdy4.jpg" alt="Bridal 34" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508995/b35_lvukvm.jpg" alt="Bridal 35" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508850/b1_twqqoj.jpg"  alt="Bridal 1"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508852/b2_kozc97.jpg"  alt="Bridal 2"  loading="lazy">
+            <!-- <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508857/b3_wriuey.jpg"  alt="Bridal 3"  loading="lazy"> -->
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508857/b3_wriuey.jpg"  alt="Bridal 4"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508867/b5_uf3vxp.jpg"  alt="Bridal 5"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508869/b6_tkgrtl.jpg"  alt="Bridal 6"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508876/b7_ot9qci.jpg"  alt="Bridal 7"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508876/b8_oa577f.jpg"  alt="Bridal 8"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508887/b9_cvxgxq.jpg"  alt="Bridal 9"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508885/b10_fausoc.jpg" alt="Bridal 10" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508894/b11_saeat1.jpg" alt="Bridal 11" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508893/b12_m7ifeb.jpg" alt="Bridal 12" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508900/b13_hohnzp.jpg" alt="Bridal 13" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508900/b14_kqyhjh.jpg" alt="Bridal 14" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508908/b15_irih4p.jpg" alt="Bridal 15" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508908/b16_mnrctg.jpg" alt="Bridal 16" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508921/b17_tlmoqg.jpg" alt="Bridal 17" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508923/b18_yq0zrm.jpg" alt="Bridal 18" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508935/b19_ngzbdi.jpg" alt="Bridal 19" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508932/b20_qbi1jm.jpg" alt="Bridal 20" loading="lazy">
+            <!-- <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508936/b21_cw4qur.jpg" alt="Bridal 21" loading="lazy"> -->
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508936/b21_cw4qur.jpg" alt="Bridal 22" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508944/b22_mj1txb.jpg" alt="Bridal 23" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508949/b24_au1rpo.jpg" alt="Bridal 24" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508949/b25_xvvkba.jpg" alt="Bridal 25" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508956/b26_nmxogb.jpg" alt="Bridal 26" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508959/b27_hvac3p.jpg" alt="Bridal 27" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508966/b28_r6lxzi.jpg" alt="Bridal 28" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508969/b29_t5i952.jpg" alt="Bridal 29" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508978/b30_brobyx.jpg" alt="Bridal 30" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508978/b31_r8emny.jpg" alt="Bridal 31" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508987/b32_pgseu9.jpg" alt="Bridal 32" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508986/b33_ah6lgx.jpg" alt="Bridal 33" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508994/b34_d4mdy4.jpg" alt="Bridal 34" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773508995/b35_lvukvm.jpg" alt="Bridal 35" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="lifestyle-section">
         <div class="gal-section-header">
-            <h2>Lifestyle</h2>
-            <p>"Candid moments, real vibes, and a little magic in between."</p>
+            <h2 class="display">Lifestyle</h2>
+            <p>“Candid moments, real vibes, and a little magic in between.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509004/l1_vigeji.jpg"  alt="Lifestyle 1"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509008/l2_lsdkxr.jpg"  alt="Lifestyle 2"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509010/l3_i7dbfs.jpg"  alt="Lifestyle 3"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509014/l4_gyuqvh.jpg"  alt="Lifestyle 4"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509020/l5_lllydo.jpg"  alt="Lifestyle 5"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509021/l6_h7uoxj.jpg"  alt="Lifestyle 6"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509028/l7_rpeshx.jpg"  alt="Lifestyle 7"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509028/l8_a9qjhe.jpg"  alt="Lifestyle 8"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509034/l9_rt9bbx.jpg"  alt="Lifestyle 9"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509035/l10_tyyti6.jpg" alt="Lifestyle 10" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509040/l11_jk3odo.jpg" alt="Lifestyle 11" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509004/l1_vigeji.jpg"  alt="Lifestyle 1"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509008/l2_lsdkxr.jpg"  alt="Lifestyle 2"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509010/l3_i7dbfs.jpg"  alt="Lifestyle 3"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509014/l4_gyuqvh.jpg"  alt="Lifestyle 4"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509020/l5_lllydo.jpg"  alt="Lifestyle 5"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509021/l6_h7uoxj.jpg"  alt="Lifestyle 6"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509028/l7_rpeshx.jpg"  alt="Lifestyle 7"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509028/l8_a9qjhe.jpg"  alt="Lifestyle 8"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509034/l9_rt9bbx.jpg"  alt="Lifestyle 9"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509035/l10_tyyti6.jpg" alt="Lifestyle 10" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509040/l11_jk3odo.jpg" alt="Lifestyle 11" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="men-section">
         <div class="gal-section-header">
-            <h2>Men</h2>
-            <p>"Living the moment. Framed by the lens."</p>
+            <h2 class="display">Men</h2>
+            <p>“Living the moment. Framed by the lens.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509044/m1_rucvkx.jpg"  alt="Men 1"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509048/m2_pvzu3a.jpg"  alt="Men 2"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509052/m3_hevfve.jpg"  alt="Men 3"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509056/m4_d1ldtd.jpg"  alt="Men 4"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509059/m5_bth7o1.jpg"  alt="Men 5"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509064/m6_pwsf4q.jpg"  alt="Men 6"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509065/m7_soa1vs.jpg"  alt="Men 7"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509073/m8_zneqsu.jpg"  alt="Men 8"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509217/m9_fmmwnu.jpg"  alt="Men 9"  loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509363/m10_dgczwl.jpg" alt="Men 10" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509513/m11_iqiz5f.jpg" alt="Men 11" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509660/m12_oaozpu.jpg" alt="Men 12" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509662/m13_khmtlg.jpg" alt="Men 13" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509805/m14_c6vpzw.jpg" alt="Men 14" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509044/m1_rucvkx.jpg"  alt="Men 1"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509048/m2_pvzu3a.jpg"  alt="Men 2"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509052/m3_hevfve.jpg"  alt="Men 3"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509056/m4_d1ldtd.jpg"  alt="Men 4"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509059/m5_bth7o1.jpg"  alt="Men 5"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509064/m6_pwsf4q.jpg"  alt="Men 6"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509065/m7_soa1vs.jpg"  alt="Men 7"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509073/m8_zneqsu.jpg"  alt="Men 8"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509217/m9_fmmwnu.jpg"  alt="Men 9"  loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509363/m10_dgczwl.jpg" alt="Men 10" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509513/m11_iqiz5f.jpg" alt="Men 11" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509660/m12_oaozpu.jpg" alt="Men 12" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509662/m13_khmtlg.jpg" alt="Men 13" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509805/m14_c6vpzw.jpg" alt="Men 14" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="pregnancy-section">
         <div class="gal-section-header">
-            <h2>Pregnancy</h2>
-            <p>"From a tiny heartbeat to a lifetime of love."</p>
+            <h2 class="display">Pregnancy</h2>
+            <p>“From a tiny heartbeat to a lifetime of love.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509864/p1_cpvilh.jpg" alt="Pregnancy 1" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509866/p2_tztpeb.jpg" alt="Pregnancy 2" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509868/p3_ggfaae.jpg" alt="Pregnancy 3" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509875/p4_xrum4s.jpg" alt="Pregnancy 4" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509878/p5_mwtxhl.jpg" alt="Pregnancy 5" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509881/p6_v3jin1.jpg" alt="Pregnancy 6" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509886/p7_tavwkn.jpg" alt="Pregnancy 7" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509888/p8_ujfoak.jpg" alt="Pregnancy 8" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509891/p9_glyunh.jpg" alt="Pregnancy 9" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509864/p1_cpvilh.jpg" alt="Pregnancy 1" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509866/p2_tztpeb.jpg" alt="Pregnancy 2" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509868/p3_ggfaae.jpg" alt="Pregnancy 3" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509875/p4_xrum4s.jpg" alt="Pregnancy 4" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509878/p5_mwtxhl.jpg" alt="Pregnancy 5" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509881/p6_v3jin1.jpg" alt="Pregnancy 6" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509886/p7_tavwkn.jpg" alt="Pregnancy 7" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509888/p8_ujfoak.jpg" alt="Pregnancy 8" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509891/p9_glyunh.jpg" alt="Pregnancy 9" loading="lazy">
         </div>
     </section>
 
     <section class="gal-section" id="wedding-section">
         <div class="gal-section-header">
-            <h2>Wedding</h2>
-            <p>"Forever just found its favourite frame."</p>
+            <h2 class="display">Wedding</h2>
+            <p>“Forever just found its favourite frame.”</p>
         </div>
         <div class="gal-grid">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509896/w1_oddlfl.jpg" alt="Wedding 1" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509901/w2_wfcppt.jpg" alt="Wedding 2" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509903/w3_j4qlct.jpg" alt="Wedding 3" loading="lazy">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509909/w4_xrqqbi.jpg" alt="Wedding 4" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509896/w1_oddlfl.jpg" alt="Wedding 1" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509901/w2_wfcppt.jpg" alt="Wedding 2" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509903/w3_j4qlct.jpg" alt="Wedding 3" loading="lazy">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_720/v1773509909/w4_xrqqbi.jpg" alt="Wedding 4" loading="lazy">
         </div>
     </section>
 
     <!-- <section class="gal-section" id="brands-section">
         <div class="gal-section-header">
-            <h2>Brands &amp; Commercial</h2>
-            <p>"Visuals that vibe with your brand."</p>
+            <h2 class="display">Brands &amp; Commercial</h2>
+            <p>“Visuals that vibe with your brand.”</p>
         </div>
         <div class="gal-grid">
             <img src="img/brands/b1.jpg"  alt="Brand 1"  loading="lazy">
@@ -295,36 +295,61 @@
 </main>
 
 <footer class="site-footer">
-    <div class="footer-inner">
-        <span class="footer-logo"><span class="logo-pixel">Pixel</span><span class="logo-art">art</span> Impression</span>
-        <span class="footer-copy">&copy; <span id="year"></span> All rights reserved.</span>
+    <div class="footer-row">
+        <span>&copy; <span id="year"></span> Pixelart Impression. All rights reserved.</span>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="booking.html">Book a Session</a>
+            <a href="https://www.instagram.com/pixelart_shotit?igsh=NHVhY256bnkxajBo" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
     </div>
+    <div class="footer-mark" aria-hidden="true"><span class="wm">p<span class="wm-i">ı</span>xelart</span></div>
 </footer>
 
 <script src="shared.js"></script>
 <script>
-/* ── Category buttons ── */
-const catBtns = document.querySelectorAll(".cat-btn");
+const sections = Array.from(document.querySelectorAll(".gal-section"));
+const catBtns  = document.querySelectorAll(".cat-btn");
+
+/* ── Photo counts on the filter pills and section headers (always in sync with the markup) ── */
+(function () {
+    let total = 0;
+    sections.forEach(sec => {
+        const n = sec.querySelectorAll(".gal-grid img").length;
+        total += n;
+        const btn = document.querySelector(`.cat-btn[data-target="${sec.id}"]`);
+        if (btn) btn.insertAdjacentHTML("beforeend", ` <span class="cat-count">${n}</span>`);
+        const h = sec.querySelector(".gal-section-header h2");
+        if (h) h.insertAdjacentHTML("afterend", `<span class="gal-count">${n} photos</span>`);
+    });
+    document.querySelector('.cat-btn[data-target="all"]').insertAdjacentHTML("beforeend", ` <span class="cat-count">${total}</span>`);
+})();
+
+/* ── Images: fade in as they load, keyboard-openable ── */
+document.querySelectorAll(".gal-grid img").forEach(img => {
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    if (img.complete && img.naturalWidth) img.classList.add("is-loaded");
+    else img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+});
+
+/* ── Category filter ── */
 catBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        catBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        catBtns.forEach(b => { b.classList.toggle("active", b === btn); b.setAttribute("aria-pressed", String(b === btn)); });
+        const track = btn.parentElement;
+        track.scrollTo({ left: btn.offsetLeft - (track.clientWidth - btn.offsetWidth) / 2, behavior: "smooth" });
         const target = btn.dataset.target;
-        if (target === "all") {
-            document.querySelectorAll(".gal-section").forEach(s => s.style.display = "");
-        } else {
-            document.querySelectorAll(".gal-section").forEach(s => {
-                s.style.display = s.id === target ? "" : "none";
-            });
-            const sec = document.getElementById(target);
-            if (sec) setTimeout(() => sec.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-        }
-        // Refresh lightbox image list after category filter changes
-        allImgs = getVisibleImgs();
-        allImgs.forEach((img, i) => {
-            img.style.cursor = "none";
-            img.onclick = () => openLB(i);
+        sections.forEach(s => {
+            const show = target === "all" || s.id === target;
+            s.hidden = !show;
+            if (show) { s.classList.remove("is-entering"); void s.offsetWidth; s.classList.add("is-entering"); }
         });
+        // Sections carry scroll-margin-top for the sticky header + strip
+        const anchor = target === "all" ? sections[0] : document.getElementById(target);
+        if (target !== "all" || anchor.getBoundingClientRect().top < 0) {
+            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     });
 });
 
@@ -336,18 +361,30 @@ const lbPrev   = document.getElementById("lbPrev");
 const lbNext   = document.getElementById("lbNext");
 const lbCount  = document.getElementById("lbCounter");
 
-// Only include images from currently visible sections
-function getVisibleImgs() {
-    return Array.from(document.querySelectorAll(".gal-section:not([style*='none']) .gal-grid img, .gal-section:not([style]) .gal-grid img"));
-}
-let allImgs = getVisibleImgs();
+let visible = [];
 let cur = 0;
+let opener = null;
 
-function openLB(i) {
-    cur = i;
-    lbImg.src = allImgs[cur].src;
-    lbImg.alt = allImgs[cur].alt;
-    lbCount.textContent = `${cur + 1} / ${allImgs.length}`;
+function visibleImgs() {
+    return sections.filter(s => !s.hidden).flatMap(s => Array.from(s.querySelectorAll(".gal-grid img")));
+}
+function show(i) {
+    cur = (i + visible.length) % visible.length;
+    // Show the cached grid rendition at once, then upgrade to the large one when it arrives
+    const small = visible[cur].src;
+    const large = small.replace("w_720", "w_2000");
+    lbImg.src = small;
+    const idx = cur;
+    const hi = new Image();
+    hi.onload = () => { if (cur === idx) lbImg.src = large; };
+    hi.src = large;
+    lbImg.alt = visible[cur].alt;
+    lbCount.textContent = `${cur + 1} / ${visible.length}`;
+}
+function openLB(img) {
+    visible = visibleImgs();
+    opener = img;
+    show(visible.indexOf(img));
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
     lbClose.focus();
@@ -355,23 +392,24 @@ function openLB(i) {
 function closeLB() {
     lightbox.classList.remove("open");
     document.body.style.overflow = "";
+    if (opener) opener.focus({ preventScroll: true });
 }
 function goTo(i) {
-    cur = (i + allImgs.length) % allImgs.length;
-    lbImg.style.opacity = "0";
+    lbImg.classList.add("is-swapping");
     setTimeout(() => {
-        lbImg.src = allImgs[cur].src;
-        lbImg.alt = allImgs[cur].alt;
-        lbCount.textContent = `${cur + 1} / ${allImgs.length}`;
-        lbImg.style.opacity = "1";
-    }, 180);
+        show(i);
+        const done = () => lbImg.classList.remove("is-swapping");
+        if (lbImg.complete) done(); else lbImg.addEventListener("load", done, { once: true });
+    }, 140);
 }
 
-allImgs.forEach((img, i) => {
-    img.style.cursor = "none";
-    img.setAttribute("tabindex", "0");
-    img.addEventListener("click",   () => openLB(i));
-    img.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") openLB(i); });
+document.querySelector("main").addEventListener("click", e => {
+    const img = e.target.closest(".gal-grid img");
+    if (img) openLB(img);
+});
+document.querySelector("main").addEventListener("keydown", e => {
+    const img = e.target.closest(".gal-grid img");
+    if (img && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openLB(img); }
 });
 lbClose.addEventListener("click", closeLB);
 lbPrev.addEventListener("click",  () => goTo(cur - 1));
@@ -391,7 +429,6 @@ lightbox.addEventListener("touchend",   e => {
     const dx = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 50) goTo(dx < 0 ? cur + 1 : cur - 1);
 }, { passive: true });
-
 </script>
 </body>
 </html>
