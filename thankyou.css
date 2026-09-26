@@ -1,66 +1,32 @@
 /* ═══════════════════════════════════════════════
    PIXELART IMPRESSION — Thank you
-   Shared tokens and chrome live in base.css.
+   Brand tokens and chrome live in base.css.
    ═══════════════════════════════════════════════ */
 
 body {
     min-height: 100dvh;
-    display: flex; align-items: center; justify-content: center;
-    padding: 40px 20px;
+    display: flex; align-items: center;
+    padding: 40px var(--gutter);
 }
 
-.ty-wrap { width: 100%; max-width: 540px; }
+.ty-wrap { width: 100%; max-width: 760px; margin: 0 auto; }
+.ty-mark { font-size: 22px; margin-bottom: clamp(48px, 8vw, 96px); }
 
-.ty-card {
-    background: var(--dark); border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 56px 48px 44px;
-    text-align: center;
-    animation: cardIn 700ms var(--ease-out) both;
-}
-@keyframes cardIn { from { opacity: 0; transform: translateY(20px); } }
-
-.ty-icon { width: 68px; height: 68px; margin: 0 auto 28px; animation: popIn 500ms 250ms var(--ease-out) both; }
-@keyframes popIn { from { transform: scale(0.85); opacity: 0; } }
+.ty-icon { width: 56px; height: 56px; margin-bottom: 28px; color: var(--accent); animation: popIn 500ms 150ms var(--ease-out) both; }
+@keyframes popIn { from { transform: scale(0.9); opacity: 0; } }
 .ty-icon svg { width: 100%; height: 100%; }
-.check { stroke-dasharray: 46; stroke-dashoffset: 46; animation: drawCheck 500ms 600ms var(--ease-in-out) forwards; }
+.check { stroke-dasharray: 46; stroke-dashoffset: 46; animation: drawCheck 500ms 500ms var(--ease-in-out) forwards; }
 @keyframes drawCheck { to { stroke-dashoffset: 0; } }
 
-.ty-label { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-h1 { font-size: clamp(30px, 4vw, 40px); font-weight: 700; line-height: 1.15; margin-bottom: 18px; }
-.ty-body { font-size: 15px; line-height: 1.8; color: var(--dim); margin-bottom: 24px; }
-.ty-body strong { color: var(--white); }
+.ty-wrap h1 { font-size: clamp(52px, 8vw, 112px); margin-bottom: 24px; padding-bottom: 0.04em; animation: rise 800ms 100ms var(--ease-out) both; }
+.ty-body { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: var(--ink-2); max-width: 46ch; animation: rise 800ms 180ms var(--ease-out) both; }
+.ty-body strong { color: var(--ink); font-weight: 600; }
+.ty-note { margin-top: 16px; font-size: 15px; color: var(--muted); animation: rise 800ms 240ms var(--ease-out) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
 
-.ty-note {
-    border-top: 1px solid var(--border);
-    padding: 24px 0 0;
-    margin-bottom: 24px;
-}
-.ty-note p { font-size: 14px; line-height: 1.7; color: var(--dim); }
-
-.ty-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
-.btn-outline, .btn-wa {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    min-height: 48px; padding: 0 24px;
-    border-radius: var(--radius);
-    font-family: var(--font); font-size: 13px; letter-spacing: 0.04em;
-    transition: border-color 200ms ease, color 200ms ease, filter 200ms ease, transform 160ms var(--ease-out);
-}
-.btn-outline { border: 1px solid var(--border-2); color: var(--dim); }
-.btn-wa { background: #15803d; color: #fff; }   /* deeper WhatsApp green: 5:1 with white text */
-.btn-wa img { width: 18px; height: 18px; filter: brightness(0) invert(1); object-fit: contain; }
-.btn-outline:active, .btn-wa:active { transform: scale(0.97); }
-@media (hover: hover) and (pointer: fine) {
-    .btn-outline:hover { border-color: var(--white); color: var(--white); }
-    .btn-wa:hover { filter: brightness(1.1); }
-}
-
-.ty-brand { font-size: 13px; font-weight: 700; color: var(--faint); }
-.ty-brand .logo-pixel { font-size: inherit; color: var(--faint); }
-.ty-brand .logo-art { font-size: inherit; }
+.ty-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; animation: rise 800ms 300ms var(--ease-out) both; }
 
 @media (max-width: 480px) {
-    .ty-card { padding: 40px 24px 32px; }
     .ty-actions { flex-direction: column; }
-    .btn-outline, .btn-wa { width: 100%; }
+    .ty-actions .btn { width: 100%; }
 }

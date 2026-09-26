@@ -3,63 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixelart Impression: wedding and portrait photography in Uyo. Timeless, elegant portraits and celebrations.">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="Pixelart Impression: wedding and portrait photography in Uyo by Daniel Eyo. Beauty, bridal, birthday, maternity and lifestyle sessions.">
+    <meta name="theme-color" content="#f1f1ee">
     <meta property="og:title" content="Pixelart Impression">
-    <meta property="og:description" content="Professional Wedding & Portrait Photographer in Uyo.">
+    <meta property="og:description" content="Wedding and portrait photography in Uyo.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506560/first_gsnspa.jpg">
-<meta name="twitter:image" content="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506560/first_gsnspa.jpg">
-    <title>Pixelart Impression</title>
+    <meta property="og:image" content="https://res.cloudinary.com/dx3j36ymx/image/upload/f_jpg,q_auto,w_1200/v1773506560/first_gsnspa.jpg">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dx3j36ymx/image/upload/f_jpg,q_auto,w_1200/v1773506560/first_gsnspa.jpg">
+    <title>Pixelart Impression | Wedding &amp; Portrait Photography in Uyo</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpeg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="index.css">
-    <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('px-seen'))document.documentElement.classList.add('px-seen')}catch(e){}</script>
-    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('px-theme');if(t)d.dataset.theme=t}catch(e){}})()</script>
 </head>
 <body>
-
-<!-- PRELOADER -->
-<div id="preloader" aria-hidden="true">
-    <div class="pre-content">
-        <div class="pre-logo"><span>P</span><span>I</span><span>X</span><span>E</span><span>L</span></div>
-        <div class="pre-line"><div class="pre-fill"></div></div>
-        <p class="pre-sub">Capturing moments beautifully...</p>
-    </div>
-</div>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp">
 <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp"> -->
-    <img src="img/whatsapp.png" alt="WhatsApp">
+    <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-whatsapp-logo"/></svg>
     <span class="wa-tip">Book via WhatsApp</span>
 </a>
 
 <!-- BACK TO TOP -->
-<button id="btt" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
+<button id="btt" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-up"/></svg></button>
 
 <!-- ═══════════════════ HEADER ═══════════════════ -->
 <header id="site-header">
     <div class="header-inner">
-        <div class="header-logo">
-            <a href="index.html">
-                <span class="logo-pixel">Pixel</span><span class="logo-art">art</span>
-                <span class="logo-sub">Impression</span>
-            </a>
-        </div>
+        <a href="index.html" class="wordmark" aria-label="Pixelart Impression, home">
+            <span class="wm" aria-hidden="true">p<span class="wm-i">ı</span>xelart</span><span class="wm-sub" aria-hidden="true">impression</span>
+        </a>
 
         <nav class="header-nav" aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#portfolio">Work</a>
             <a href="gallery.html">Gallery</a>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
         </nav>
 
-        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <svg class="icon i-moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+            <svg class="icon i-sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary header-cta">Let's Talk</a>
+
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span>
         </button>
     </div>
 
@@ -68,7 +63,7 @@
         <a href="#portfolio">Work</a>
         <a href="gallery.html">Gallery</a>
         <a href="#contact">Contact</a>
-        <a href="booking.html" class="mob-book">Book a Session</a>
+        <a href="booking.html" class="btn btn-primary">Book a Session</a>
     </div>
 </header>
 
@@ -76,213 +71,225 @@
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero" aria-label="Introduction">
-    <div class="hero-text">
-        <p class="hero-eyebrow">Wedding &amp; Portrait Photography</p>
-        <h1 class="hero-headline">Your story, <em>beautifully</em> told.</h1>
-        <p class="hero-body">Your vision, my lens. Timeless portraits and celebrations, photographed in Uyo.</p>
+    <h1 class="hero-title display">
+        <span class="line"><span class="line-in">Your story,</span></span>
+        <span class="line"><span class="line-in"><em>beautifully</em> <span class="chip" aria-hidden="true"><img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_320,h_200/v1773508428/b5_h706fv.jpg" alt=""></span> told.</span></span>
+    </h1>
+
+    <div class="hero-meta">
+        <p class="lead">Wedding and portrait photography in Uyo. Your vision, my lens, perfection in every shot.</p>
         <div class="hero-actions">
-            <a href="booking.html" class="btn-primary">Book a Session</a>
-            <a href="gallery.html" class="btn-ghost">View Gallery</a>
+            <a href="booking.html" class="btn btn-primary">Book a Session <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+            <a href="gallery.html" class="btn btn-ghost">View Gallery</a>
         </div>
     </div>
 
-    <div class="hero-grid" aria-label="Featured photos">
-        <figure class="hg hg-tall">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506560/first_gsnspa.jpg" alt="Woman in a black gown posing in the studio" fetchpriority="high">
+    <div class="hero-band" aria-label="Featured photos">
+        <figure class="hb hb-1">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_900/v1773506560/first_gsnspa.jpg" alt="Woman in a black gown posing in the studio" fetchpriority="high">
         </figure>
-        <figure class="hg hg-a">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506609/second_xsi7k3.jpg" alt="Man in a light jacket crouching against a blue backdrop">
+        <figure class="hb hb-2">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_800/v1773506609/second_xsi7k3.jpg" alt="Man in a light jacket crouching against a blue backdrop">
         </figure>
-        <figure class="hg hg-b">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506553/third_o5uzvc.jpg" alt="Portrait of a woman seated outdoors">
+        <figure class="hb hb-3">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_800/v1773506542/fourth_dozood.jpg" alt="Birthday portrait of a woman in a pink tulle dress holding a cake">
+        </figure>
+        <figure class="hb hb-4">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_800/v1773506553/third_o5uzvc.jpg" alt="Woman in sunglasses seated on outdoor steps">
         </figure>
     </div>
 </section>
 
-<!-- ═══════════════════ STATS STRIP ═══════════════════ -->
-<div class="stats-strip">
-    <div class="stat reveal" style="--i:0"><span class="stat-num">200+</span><span class="stat-label">Sessions Shot</span></div>
-    <div class="stat reveal" style="--i:1"><span class="stat-num">7</span><span class="stat-label">Categories</span></div>
-    <div class="stat reveal" style="--i:2"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
-    <div class="stat reveal" style="--i:3"><span class="stat-num">Uyo</span><span class="stat-label">Based</span></div>
+<!-- ═══════════════════ FACTS ═══════════════════ -->
+<div class="facts" aria-label="At a glance">
+    <div class="fact reveal" style="--i:0"><span class="fact-num display">200+</span><span class="fact-label">sessions shot</span></div>
+    <div class="fact reveal" style="--i:1"><span class="fact-num display">7</span><span class="fact-label">kinds of session</span></div>
+    <div class="fact reveal" style="--i:2"><span class="fact-num display">24h</span><span class="fact-label">reply to every booking</span></div>
+    <div class="fact reveal" style="--i:3"><span class="fact-num display">Uyo</span><span class="fact-label">studio and on location</span></div>
 </div>
 
 <!-- ═══════════════════ ABOUT ═══════════════════ -->
-<section class="about" id="about" aria-label="About">
-    <div class="about-img-wrap reveal">
-        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Portrait of Daniel, the photographer behind Pixelart" loading="lazy">
-        <div class="about-img-frame" aria-hidden="true"></div>
-        <div class="about-badge" aria-hidden="true">
-            <span>Pixel</span><br><span>art</span>
-        </div>
-    </div>
+<section class="about" id="about" aria-labelledby="about-title">
+    <p class="about-statement display reveal">I started from scratch. No fancy gear, no studio, just <em>passion</em> and curiosity.</p>
 
-    <div class="about-text reveal" style="--i:1">
-        <h2 class="section-title">Hello, I'm <em>PixelArt</em></h2>
-        <p class="about-body">
-            Sometimes I look back and smile at how far I've come.
-            I started photography from scratch: no fancy gear, no studio,
-            just pure passion and curiosity. I remember the early days
-            of experimenting, making mistakes, learning little by little,
-            and falling in love with the process of capturing moments.
-        </p>
-        <p class="about-body">
-            Step by step, through dedication and consistency, I've grown
-            from those humble beginnings into a professional photographer.
-            And I'm still growing, pushing myself to create even more
-            stunning, creative, and timeless images for every client
-            who trusts me.
-        </p>
-        <a href="booking.html" class="btn-primary">Book a Session</a>
+    <div class="about-grid">
+        <figure class="about-portrait reveal">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_900/v1773506542/Daniel_yibxcj.jpg" alt="Portrait of Daniel Eyo, the photographer behind Pixelart" loading="lazy">
+        </figure>
+        <div class="about-text reveal" style="--i:1">
+            <h2 class="about-title" id="about-title">Hello, I'm Daniel.</h2>
+            <p>
+                Sometimes I look back and smile at how far I've come. I remember the
+                early days of experimenting, making mistakes, learning little by little,
+                and falling in love with the process of capturing moments.
+            </p>
+            <p>
+                Step by step, through dedication and consistency, I've grown from
+                those humble beginnings into a professional photographer. And I'm still
+                growing, pushing myself to create even more stunning, creative, and
+                timeless images for every client who trusts me.
+            </p>
+            <a href="booking.html" class="link-arrow">Book a Session <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+        </div>
     </div>
 </section>
 
-<!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
-<section class="portfolio" id="portfolio" aria-label="Portfolio">
-    <div class="portfolio-header reveal">
-        <h2 class="section-title">Portfolio</h2>
-        <p class="portfolio-sub">A few recent sessions. Pick a category to see the full set.</p>
+<!-- ═══════════════════ WORK INDEX ═══════════════════ -->
+<section class="work" id="portfolio" aria-labelledby="work-title">
+    <div class="work-head reveal">
+        <h2 class="work-title display" id="work-title">Selected work</h2>
+        <p class="lead">A few recent sessions. Pick a category to see the full set.</p>
     </div>
 
-    <div class="portfolio-grid">
-
-        <a href="gallery.html#beauty-section" class="pg-card pg-large reveal" style="--i:0" aria-label="Beauty Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508428/b5_h706fv.jpg" alt="Beauty shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Beauty</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
+    <div class="work-body">
+        <div class="work-preview" aria-hidden="true">
+            <div class="work-frame">
+                <img class="is-active" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773508428/b5_h706fv.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773508850/b1_twqqoj.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773508648/b1_jkbinn.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773509044/m1_rucvkx.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773509864/p1_cpvilh.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773509028/l8_a9qjhe.jpg" alt="" loading="lazy">
+                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1000/v1773509896/w1_oddlfl.jpg" alt="" loading="lazy">
             </div>
-        </a>
+        </div>
 
-        <a href="gallery.html#bridals-section" class="pg-card reveal" style="--i:1" aria-label="Bridal Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508850/b1_twqqoj.jpg" alt="Bridal shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Bridals</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <a href="gallery.html#birthday-section" class="pg-card reveal" style="--i:2" aria-label="Birthday Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508648/b1_jkbinn.jpg" alt="Birthday shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Birthdays</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <a href="gallery.html#men-section" class="pg-card pg-tall reveal" style="--i:3" aria-label="Men Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509044/m1_rucvkx.jpg" alt="Men shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Men</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <a href="gallery.html#pregnancy-section" class="pg-card reveal" style="--i:0" aria-label="Pregnancy Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509864/p1_cpvilh.jpg" alt="Pregnancy shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Pregnancy</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <a href="gallery.html#lifestyle-section" class="pg-card reveal" style="--i:1" aria-label="Lifestyle Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509028/l8_a9qjhe.jpg" alt="Lifestyle Shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Lifestyle</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <a href="gallery.html#wedding-section" class="pg-card pg-wide reveal" style="--i:2" aria-label="Wedding Shoots">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509896/w1_oddlfl.jpg" alt="Wedding shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Weddings</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a>
-
-        <!-- <a href="gallery.html#brands-section" class="pg-card reveal" style="--i:3" aria-label="Brands & Commercial">
-            <img src="img/brands/b1.jpg" alt="Brand shoot" loading="lazy">
-            <div class="pg-info">
-                <span class="pg-title">Brands</span>
-                <span class="pg-arrow" aria-hidden="true">→</span>
-            </div>
-        </a> -->
-
+        <ul class="work-list">
+            <li class="reveal"><a class="work-row" href="gallery.html#beauty-section" data-i="0">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773508428/b5_h706fv.jpg" alt="" loading="lazy">
+                <span class="work-name">Beauty</span>
+                <span class="work-note">Glamour redefined in every frame.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#bridals-section" data-i="1">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773508850/b1_twqqoj.jpg" alt="" loading="lazy">
+                <span class="work-name">Bridals</span>
+                <span class="work-note">A bride, her dress, and forever.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#birthday-section" data-i="2">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773508648/b1_jkbinn.jpg" alt="" loading="lazy">
+                <span class="work-name">Birthdays</span>
+                <span class="work-note">Framed in love, lit by joy.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#men-section" data-i="3">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773509044/m1_rucvkx.jpg" alt="" loading="lazy">
+                <span class="work-name">Men</span>
+                <span class="work-note">Living the moment.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#pregnancy-section" data-i="4">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773509864/p1_cpvilh.jpg" alt="" loading="lazy">
+                <span class="work-name">Pregnancy</span>
+                <span class="work-note">From a tiny heartbeat to a lifetime of love.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#lifestyle-section" data-i="5">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773509028/l8_a9qjhe.jpg" alt="" loading="lazy">
+                <span class="work-name">Lifestyle</span>
+                <span class="work-note">Candid moments, real vibes.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+            <li class="reveal"><a class="work-row" href="gallery.html#wedding-section" data-i="6">
+                <img class="work-thumb" src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_200,h_250/v1773509896/w1_oddlfl.jpg" alt="" loading="lazy">
+                <span class="work-name">Weddings</span>
+                <span class="work-note">Forever just found its favourite frame.</span>
+                <svg class="icon work-arrow" aria-hidden="true"><use href="img/icons.svg#i-arrow-up-right"/></svg>
+            </a></li>
+        </ul>
     </div>
 
-    <div class="portfolio-cta reveal">
-        <a href="gallery.html" class="btn-ghost">View Gallery</a>
+    <div class="work-cta reveal">
+        <a href="gallery.html" class="btn btn-ghost">View Gallery <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
     </div>
 </section>
 
 <!-- ═══════════════════ CONTACT ═══════════════════ -->
-<section class="contact" id="contact" aria-label="Contact">
-    <div class="contact-left reveal">
-        <h2 class="section-title">I'd love to hear<br><em>from you</em></h2>
-        <p class="contact-body">Whether you're interested in booking a photoshoot or just want to ask a question, reach out. Every great photo starts with a conversation.</p>
-        <a href="booking.html" class="btn-primary">Book a Session</a>
-    </div>
-
-    <div class="contact-right reveal" style="--i:1">
-        <div class="social-list" aria-label="Social media links">
-            <a href="https://www.facebook.com/share/1GLXQd9kSv/" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/fb.png" alt="">
-                <div class="social-text">
-                    <span class="social-platform">Facebook</span>
-                    <span class="social-handle">Daniel Eyo</span>
-                </div>
-                <span class="social-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a href="https://www.instagram.com/pixelart_shotit?igsh=NHVhY256bnkxajBo" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/insta.png" alt="">
-                <div class="social-text">
-                    <span class="social-platform">Instagram</span>
-                    <span class="social-handle">@pixelart_shotit</span>
-                </div>
-                <span class="social-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a href="https://x.com/eyodaniel222?t=sWx9hCiADy-Ey0B1OX_ykg&s=09" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/x.png" alt="">
-                <div class="social-text">
-                    <span class="social-platform">X (Twitter)</span>
-                    <span class="social-handle">@eyodaniel222</span>
-                </div>
-                <span class="social-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="social-item" target="_blank" rel="noopener noreferrer">
-            <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="social-item" target="_blank" rel="noopener noreferrer"> -->
-                <img src="img/whatsapp.png" alt="">
-                <div class="social-text">
-                    <span class="social-platform">WhatsApp</span>
-                    <span class="social-handle">09167486667</span>
-                </div>
-                <span class="social-arrow" aria-hidden="true">↗</span>
-            </a>
-            <a href="mailto:danielpixel222@gmail.com?subject=Hello" class="social-item">
-                <img src="img/email.png" alt="">
-                <div class="social-text">
-                    <span class="social-platform">Email</span>
-                    <span class="social-handle">danielpixel222@gmail.com</span>
-                </div>
-                <span class="social-arrow" aria-hidden="true">↗</span>
-            </a>
+<section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact-head">
+        <h2 class="contact-title display reveal" id="contact-title">I'd love to hear <em>from you.</em></h2>
+        <div class="contact-intro reveal" style="--i:1">
+            <p class="lead">Booking a shoot or just have a question? Every great photo starts with a conversation.</p>
+            <a href="booking.html" class="btn btn-primary">Book a Session <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
         </div>
     </div>
+
+    <ul class="channels" aria-label="Contact channels">
+        <li class="reveal" style="--i:0"><a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="channel" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="channel" target="_blank" rel="noopener noreferrer"> -->
+            <svg class="icon channel-icon" aria-hidden="true"><use href="img/icons.svg#i-whatsapp-logo"/></svg>
+            <span class="channel-name">WhatsApp</span>
+            <span class="channel-handle">09167486667</span>
+        </a></li>
+        <li class="reveal" style="--i:1"><a href="https://www.instagram.com/pixelart_shotit?igsh=NHVhY256bnkxajBo" class="channel" target="_blank" rel="noopener noreferrer">
+            <svg class="icon channel-icon" aria-hidden="true"><use href="img/icons.svg#i-instagram-logo"/></svg>
+            <span class="channel-name">Instagram</span>
+            <span class="channel-handle">@pixelart_shotit</span>
+        </a></li>
+        <li class="reveal" style="--i:2"><a href="mailto:danielpixel222@gmail.com?subject=Hello" class="channel">
+            <svg class="icon channel-icon" aria-hidden="true"><use href="img/icons.svg#i-envelope-simple"/></svg>
+            <span class="channel-name">Email</span>
+            <span class="channel-handle">danielpixel222@gmail.com</span>
+        </a></li>
+        <li class="reveal" style="--i:3"><a href="https://www.facebook.com/share/1GLXQd9kSv/" class="channel" target="_blank" rel="noopener noreferrer">
+            <svg class="icon channel-icon" aria-hidden="true"><use href="img/icons.svg#i-facebook-logo"/></svg>
+            <span class="channel-name">Facebook</span>
+            <span class="channel-handle">Daniel Eyo</span>
+        </a></li>
+        <li class="reveal" style="--i:4"><a href="https://x.com/eyodaniel222?t=sWx9hCiADy-Ey0B1OX_ykg&s=09" class="channel" target="_blank" rel="noopener noreferrer">
+            <svg class="icon channel-icon" aria-hidden="true"><use href="img/icons.svg#i-x-logo"/></svg>
+            <span class="channel-name">X (Twitter)</span>
+            <span class="channel-handle">@eyodaniel222</span>
+        </a></li>
+    </ul>
 </section>
 
 </main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-    <div class="footer-inner">
-        <span class="footer-logo"><span class="logo-pixel">Pixel</span><span class="logo-art">art</span> Impression</span>
-        <span class="footer-copy">&copy; <span id="year"></span> All rights reserved.</span>
+    <div class="footer-row">
+        <span>&copy; <span id="year"></span> Pixelart Impression. All rights reserved.</span>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="gallery.html">Gallery</a>
+            <a href="booking.html">Book a Session</a>
+            <a href="https://www.instagram.com/pixelart_shotit?igsh=NHVhY256bnkxajBo" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
     </div>
+    <div class="footer-mark" aria-hidden="true"><span class="wm">p<span class="wm-i">ı</span>xelart</span></div>
 </footer>
 
 <script src="shared.js"></script>
+<script>
+/* ── Work index: hovering or focusing a row swaps the preview ── */
+(function () {
+    const frames = document.querySelectorAll('.work-frame img');
+    const rows = document.querySelectorAll('.work-row');
+    const list = document.querySelector('.work-list');
+    if (!frames.length) return;
+    let active = 0;
+    function show(i) {
+        if (i === active) return;
+        frames[active].classList.remove('is-active');
+        frames[i].classList.add('is-active');
+        rows.forEach((r, k) => r.classList.toggle('is-current', k === i));
+        active = i;
+    }
+    rows[0].classList.add('is-current');
+    rows.forEach(row => {
+        const i = Number(row.dataset.i);
+        row.addEventListener('pointerenter', () => show(i));
+        row.addEventListener('focus', () => show(i));
+    });
+    // Warm the other previews once the section is near, so swaps never flash empty
+    new IntersectionObserver(([e], obs) => {
+        if (!e.isIntersecting) return;
+        frames.forEach(img => { img.loading = 'eager'; });
+        obs.disconnect();
+    }, { rootMargin: '400px' }).observe(list);
+})();
+</script>
 
 </body>
 </html>

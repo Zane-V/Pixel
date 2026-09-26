@@ -4,39 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmed | Pixelart Impression</title>
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="theme-color" content="#f1f1ee">
     <!-- Prevent this page being indexed or bookmarked directly -->
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpeg" type="image/jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..800;1,100..125,400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="thankyou.css">
-    <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
+    <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('px-theme');if(t)d.dataset.theme=t}catch(e){}})()</script>
 </head>
 <body>
 <main class="ty-wrap">
-    <div class="ty-card">
-        <div class="ty-icon" aria-hidden="true">
-            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="30" cy="30" r="29" stroke="#9b1f35" stroke-width="1.5"/>
-                <path class="check" d="M17 30 L25 39 L43 20" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        <p class="ty-label">Booking Received</p>
-        <h1>You're all set.</h1>
-        <p class="ty-body">Thank you for reaching out. Your session request has been submitted. I'll review the details and be in touch within <strong>24 hours</strong>.</p>
-        <div class="ty-note">
-            <p>Feel free to message me on WhatsApp if you'd like to follow up sooner.</p>
-        </div>
-        <div class="ty-actions">
-            <a href="index.html" class="btn-outline"><span aria-hidden="true">←</span> Back to Home</a>
-            <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20just%20booked%20a%20session%20from%20your%20website%20and%20would%20love%20to%20have%20a%20chat%20about%20the%20details" class="btn-wa" target="_blank" rel="noopener noreferrer">
-            <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="btn-wa" target="_blank" rel="noopener noreferrer"> -->
-                <img src="img/whatsapp.png" alt=""> Chat on WhatsApp
-            </a>
-        </div>
-        <p class="ty-brand"><span class="logo-pixel">Pixel</span><span class="logo-art">art</span> Impression</p>
+    <a href="index.html" class="wordmark ty-mark" aria-label="Pixelart Impression, home">
+        <span class="wm" aria-hidden="true">p<span class="wm-i">ı</span>xelart</span><span class="wm-sub" aria-hidden="true">impression</span>
+    </a>
+
+    <div class="ty-icon" aria-hidden="true">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="58" height="58" stroke="currentColor" stroke-width="1.5"/>
+            <path class="check" d="M17 30 L25 39 L43 20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </svg>
+    </div>
+
+    <h1 class="display">You're <em>all set.</em></h1>
+    <p class="ty-body">Thank you for reaching out. Your session request has been submitted. I'll review the details and be in touch within <strong>24 hours</strong>.</p>
+    <p class="ty-note">Want to follow up sooner? Message me on WhatsApp.</p>
+
+    <div class="ty-actions">
+        <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20just%20booked%20a%20session%20from%20your%20website%20and%20would%20love%20to%20have%20a%20chat%20about%20the%20details" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="btn btn-primary" target="_blank" rel="noopener noreferrer"> -->
+            <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-whatsapp-logo"/></svg> Chat on WhatsApp
+        </a>
+        <a href="index.html" class="btn btn-ghost">Back to Home</a>
     </div>
 </main>
 

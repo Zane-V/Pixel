@@ -3,34 +3,40 @@
    Loaded on every page
    ═══════════════════════════════════════ */
 
-/* ── Preloader + page-ready signal ──
-   Shown once per session, lifted as soon as the page has loaded (min ~0.9s so the
-   logo animation can finish, max 2.5s so a slow image never holds the page hostage).
-   <html> gets .is-ready when content can animate in. */
+/* ── Page-ready signal ──
+   <html> gets .is-ready once the webfont is in (capped at 700ms), so the hero
+   entrance never animates fallback type. */
 (function () {
     const root = document.documentElement;
-    const pre = document.getElementById('preloader');
     let done = false;
+    const ready = () => { if (!done) { done = true; requestAnimationFrame(() => root.classList.add('is-ready')); } };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ready);
+    setTimeout(ready, 700);
+})();
 
-    function ready() {
-        if (done) return;
-        done = true;
-        root.classList.add('is-ready');
-        try { sessionStorage.setItem('px-seen', '1'); } catch (e) {}
-        if (!pre || getComputedStyle(pre).display === 'none') return;
-        pre.classList.add('pre-out');
-        setTimeout(() => pre.remove(), 500);
-    }
-
-    if (!pre || root.classList.contains('px-seen')) {
-        requestAnimationFrame(ready);
-        return;
-    }
-    const start = performance.now();
-    const onLoad = () => setTimeout(ready, Math.max(0, 900 - (performance.now() - start)));
-    if (document.readyState === 'complete') onLoad();
-    else window.addEventListener('load', onLoad, { once: true });
-    setTimeout(ready, 2500);
+/* ── Theme toggle ──
+   Follows the system until the visitor picks; the choice is remembered on this device.
+   The early <head> script applies it before first paint. */
+(function () {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const root = document.documentElement;
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const current = () => root.dataset.theme || (mq.matches ? 'dark' : 'light');
+    const sync = () => {
+        const next = current() === 'dark' ? 'light' : 'dark';
+        btn.setAttribute('aria-label', `Switch to ${next} theme`);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', current() === 'dark' ? '#0f0f0f' : '#f1f1ee');
+    };
+    btn.addEventListener('click', () => {
+        const next = current() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('px-theme', next); } catch (e) {}
+        sync();
+    });
+    mq.addEventListener('change', sync);
+    sync();
 })();
 
 /* ── Mobile burger menu ── */
