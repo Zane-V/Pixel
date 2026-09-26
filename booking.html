@@ -20,10 +20,13 @@
 <body>
 <div class="page-wrap">
     <div class="booking-visual" aria-hidden="true">
-        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1200/v1773508850/b1_twqqoj.jpg" alt="">
+        <div class="bv-photos" id="bvPhotos">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_1400/v1773508850/b1_twqqoj.jpg" alt="" fetchpriority="high">
+        </div>
         <div class="bv-content">
             <span class="wordmark"><span class="wm">p<span class="wm-i">ı</span>xelart</span></span>
             <p class="bv-tagline">Your story, <em>beautifully</em> told.</p>
+            <p class="bv-cat"><span class="bv-progress"><span id="bvProgress"></span></span><span class="bv-cat-mask"><span class="bv-cat-name" id="bvCat">Bridals</span></span></p>
         </div>
     </div>
 
@@ -128,8 +131,46 @@
     </main>
 </div>
 
+<script src="photos.js"></script>
 <script src="shared.js"></script>
 <script>
+/* ── Photo panel: cycles through every kind of session ── */
+(function () {
+    const box = document.getElementById('bvPhotos');
+    const catEl = document.getElementById('bvCat');
+    const bar = document.getElementById('bvProgress');
+    const INTERVAL = 6000;
+    box.parentElement.style.setProperty('--bv-interval', INTERVAL + 'ms');
+    const first = 'v1773508850/b1_twqqoj.jpg';
+
+    PX.catalog().then(cats => {
+        // Two photos from each category, dealt round-robin so the category changes every time
+        const hands = cats.map(c => PX.shuffle(c.photos.filter(p => p !== first)).slice(0, 2).map(p => ({ p, label: c.label })));
+        const pool = [{ p: first, label: 'Bridals' }];
+        for (let r = 0; r < 2; r++) PX.shuffle(hands).forEach(h => { if (h[r] && h[r].label !== pool[pool.length - 1].label) pool.push(h[r]); });
+
+        function runBar() {
+            bar.classList.remove('is-running'); void bar.offsetWidth; bar.classList.add('is-running');
+        }
+        runBar();
+        PX.rotate(box, pool.map(x => x.p), {
+            interval: INTERVAL,
+            transform: 'f_auto,q_auto,w_1400',
+            kenBurns: true,
+            onChange(i) {
+                runBar();
+                catEl.classList.add('is-out');
+                setTimeout(() => {
+                    catEl.textContent = pool[i].label;
+                    catEl.classList.remove('is-out'); catEl.classList.add('is-in');
+                    void catEl.offsetWidth;
+                    catEl.classList.remove('is-in');
+                }, 260);
+            }
+        });
+    });
+})();
+
 const bookingForm = document.getElementById('bookingForm');
 const packages = document.getElementById('packages');
 

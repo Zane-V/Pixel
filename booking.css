@@ -12,7 +12,8 @@
     overflow: hidden;
     background: var(--surface);
 }
-.booking-visual img { width: 100%; height: 100%; object-fit: cover; }
+.bv-photos { position: absolute; inset: 0; z-index: 0; }
+.bv-photos img { width: 100%; height: 100%; object-fit: cover; }
 .booking-visual::after {
     content: ""; position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(10,10,10,0) 45%, rgba(10,10,10,0.72) 100%);
@@ -27,8 +28,30 @@
 }
 .bv-tagline em { font-style: italic; font-weight: 400; }
 
-.js .booking-visual img { transform: scale(1.06); transition: transform 1600ms var(--ease-out); }
-.is-ready .booking-visual img { transform: none; }
+/* Which kind of session is on screen; slides up when the photo changes */
+.bv-cat {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 22px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(241,241,238,0.78);
+}
+.bv-cat-mask { overflow: hidden; display: inline-block; }
+.bv-cat-name { display: inline-block; transition: transform 350ms var(--ease-out), opacity 250ms ease; }
+.bv-cat-name.is-out { transform: translateY(-100%); opacity: 0; }
+.bv-cat-name.is-in  { transform: translateY(100%); opacity: 0; transition: none; }
+.bv-progress { flex: 0 0 64px; height: 1px; background: rgba(241,241,238,0.3); overflow: hidden; }
+.bv-progress span { display: block; height: 100%; background: #f1f1ee; transform-origin: left; transform: scaleX(0); }
+.bv-progress span.is-running { animation: bvProgress var(--bv-interval, 6000ms) linear forwards; }
+@keyframes bvProgress { to { transform: scaleX(1); } }
+
+/* Entrance: the panel wipes open, the words rise */
+.js .booking-visual { clip-path: inset(0 100% 0 0); transition: clip-path 1100ms var(--ease-in-out); }
+.is-ready .booking-visual { clip-path: inset(0 0 0 0); }
+.js .bv-content > * { opacity: 0; transform: translateY(16px); transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out); }
+.js .bv-content > :nth-child(1) { transition-delay: 500ms; }
+.js .bv-content > :nth-child(2) { transition-delay: 600ms; }
+.js .bv-content > :nth-child(3) { transition-delay: 700ms; }
+.is-ready .bv-content > * { opacity: 1; transform: none; }
 
 /* ── Form column ── */
 .booking-main { padding: 28px clamp(24px, 5vw, 80px) 80px; }
@@ -56,6 +79,20 @@
 .js .booking-main > :nth-child(2) { transition-delay: 70ms; }
 .js .booking-main > :nth-child(3) { transition-delay: 140ms; }
 .is-ready .booking-main > * { opacity: 1; transform: none; }
+
+/* Form fields follow the heading in, one after another */
+.js .booking-form > * {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+    transition-delay: calc(200ms + var(--f, 0) * 60ms);
+}
+.is-ready .booking-form > * { opacity: 1; transform: none; }
+.booking-form > :nth-child(2) { --f: 1; }
+.booking-form > :nth-child(3) { --f: 2; }
+.booking-form > :nth-child(4) { --f: 3; }
+.booking-form > :nth-child(5) { --f: 4; }
+.booking-form > :nth-child(6) { --f: 5; }
+.booking-form > :nth-child(n+7) { --f: 6; }
 
 /* ── Form ── */
 .booking-form { display: flex; flex-direction: column; gap: 12px; }
@@ -151,7 +188,9 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--er
 @media (max-width: 900px) {
     .page-wrap { grid-template-columns: 1fr; }
     .booking-visual { position: relative; height: 260px; }
-    .booking-visual img { object-position: center 30%; }
+    .bv-photos img { object-position: center 30%; }
+    .js .booking-visual { clip-path: inset(0 0 100% 0); }
+    .bv-cat { margin-top: 14px; }
     .bv-content { left: 20px; right: 20px; bottom: 22px; }
     .bv-content .wordmark { font-size: 28px; }
     .booking-main { padding: 12px 20px 64px; }
@@ -163,5 +202,8 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--er
 
 @media (prefers-reduced-motion: reduce) {
     .js .booking-main > * { transform: none; transition: opacity 400ms ease; }
-    .js .booking-visual img { transform: none; }
+    .js .booking-form > *, .js .bv-content > * { transform: none; }
+    .js .booking-visual { clip-path: none; }
+    .bv-cat-name, .bv-cat-name.is-out, .bv-cat-name.is-in { transform: none; }
+    .bv-progress { display: none; }
 }

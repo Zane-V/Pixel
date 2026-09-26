@@ -73,7 +73,7 @@
 <section class="hero" aria-label="Introduction">
     <h1 class="hero-title display">
         <span class="line"><span class="line-in">Your story,</span></span>
-        <span class="line"><span class="line-in"><em>beautifully</em> <span class="chip" aria-hidden="true"><img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_320,h_200/v1773508428/b5_h706fv.jpg" alt=""></span> told.</span></span>
+        <span class="line"><span class="line-in"><em>beautifully</em> <span class="chip" id="heroChip" aria-hidden="true"><img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,c_fill,g_face,w_320,h_200/v1773508428/b5_h706fv.jpg" alt=""></span> told.</span></span>
     </h1>
 
     <div class="hero-meta">
@@ -102,9 +102,9 @@
 
 <!-- ═══════════════════ FACTS ═══════════════════ -->
 <div class="facts" aria-label="At a glance">
-    <div class="fact reveal" style="--i:0"><span class="fact-num display">200+</span><span class="fact-label">sessions shot</span></div>
-    <div class="fact reveal" style="--i:1"><span class="fact-num display">7</span><span class="fact-label">kinds of session</span></div>
-    <div class="fact reveal" style="--i:2"><span class="fact-num display">24h</span><span class="fact-label">reply to every booking</span></div>
+    <div class="fact reveal" style="--i:0"><span class="fact-num display count-up">200+</span><span class="fact-label">sessions shot</span></div>
+    <div class="fact reveal" style="--i:1"><span class="fact-num display count-up">7</span><span class="fact-label">kinds of session</span></div>
+    <div class="fact reveal" style="--i:2"><span class="fact-num display count-up">24h</span><span class="fact-label">reply to every booking</span></div>
     <div class="fact reveal" style="--i:3"><span class="fact-num display">Uyo</span><span class="fact-label">studio and on location</span></div>
 </div>
 
@@ -113,7 +113,7 @@
     <p class="about-statement display reveal">I started from scratch. No fancy gear, no studio, just <em>passion</em> and curiosity.</p>
 
     <div class="about-grid">
-        <figure class="about-portrait reveal">
+        <figure class="about-portrait reveal-photo parallax">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/f_auto,q_auto,w_900/v1773506542/Daniel_yibxcj.jpg" alt="Portrait of Daniel Eyo, the photographer behind Pixelart" loading="lazy">
         </figure>
         <div class="about-text reveal" style="--i:1">
@@ -260,8 +260,31 @@
     <div class="footer-mark" aria-hidden="true"><span class="wm">p<span class="wm-i">ı</span>xelart</span></div>
 </footer>
 
+<script src="photos.js"></script>
 <script src="shared.js"></script>
 <script>
+/* ── Hero: every photo keeps changing, each tile on its own beat ──
+   Tile 1 leads with beauty and bridal, the others pull from the rest, so the band
+   never shows two of the same session at once. The chip in the headline cycles faces. */
+(function () {
+    const tiles = document.querySelectorAll('.hero-band .hb');
+    const chip = document.getElementById('heroChip');
+    const groups = [['beauty', 'bridals'], ['men', 'wedding'], ['birthday', 'pregnancy'], ['lifestyle']];
+    PX.catalog().then(cats => {
+        const by = Object.fromEntries(cats.map(c => [c.id, c.photos]));
+        tiles.forEach((tile, k) => {
+            const current = tile.querySelector('img').src;
+            const pool = PX.shuffle(groups[k].flatMap(id => by[id] || []));
+            // Keep the photo already on screen as slide 0 so nothing flashes on load
+            pool.unshift(current);
+            PX.rotate(tile, pool, { interval: 5200, delay: 900 + k * 1300, transform: 'f_auto,q_auto,w_900' });
+        });
+        const faces = PX.shuffle(cats.flatMap(c => c.photos.filter(p => !/^https?:/.test(p)).slice(0, 4)));
+        faces.unshift(chip.querySelector('img').src);
+        PX.rotate(chip, faces, { interval: 2600, delay: 1200, transform: 'f_auto,q_auto,c_fill,g_face,w_320,h_200' });
+    });
+})();
+
 /* ── Work index: hovering or focusing a row swaps the preview ── */
 (function () {
     const frames = document.querySelectorAll('.work-frame img');
