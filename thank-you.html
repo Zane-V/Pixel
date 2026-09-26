@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Confirmed — Pixelart Impression</title>
+    <title>Booking Confirmed | Pixelart Impression</title>
     <meta name="theme-color" content="#0a0a0a">
     <!-- Prevent this page being indexed or bookmarked directly -->
     <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="thankyou.css">
     <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
 </head>
 <body>
-<div class="cursor-spot" aria-hidden="true"></div>
-
-<div class="ty-wrap">
+<main class="ty-wrap">
     <div class="ty-card">
         <div class="ty-icon" aria-hidden="true">
             <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,15 +23,14 @@
                 <path class="check" d="M17 30 L25 39 L43 20" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <p class="ty-label">// Booking Received</p>
+        <p class="ty-label">Booking Received</p>
         <h1>You're all set.</h1>
-        <p class="ty-body">Thank you for reaching out. Your session request has been submitted — I'll review the details and be in touch within <strong>24 hours</strong>.</p>
+        <p class="ty-body">Thank you for reaching out. Your session request has been submitted. I'll review the details and be in touch within <strong>24 hours</strong>.</p>
         <div class="ty-note">
-            <span>📸</span>
             <p>Feel free to message me on WhatsApp if you'd like to follow up sooner.</p>
         </div>
         <div class="ty-actions">
-            <a href="index.html" class="btn-outline">← Back to Home</a>
+            <a href="index.html" class="btn-outline"><span aria-hidden="true">←</span> Back to Home</a>
             <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20just%20booked%20a%20session%20from%20your%20website%20and%20would%20love%20to%20have%20a%20chat%20about%20the%20details" class="btn-wa" target="_blank" rel="noopener noreferrer">
             <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="btn-wa" target="_blank" rel="noopener noreferrer"> -->
                 <img src="img/whatsapp.png" alt=""> Chat on WhatsApp
@@ -37,7 +38,7 @@
         </div>
         <p class="ty-brand"><span class="logo-pixel">Pixel</span><span class="logo-art">art</span> Impression</p>
     </div>
-</div>
+</main>
 
 <script src="shared.js"></script>
 </body>

@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Book a photography session with Pixelart Impression.">
     <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Book a Session — Pixelart Impression">
+    <meta property="og:title" content="Book a Session | Pixelart Impression">
     <meta property="og:type" content="website">
-    <title>Book a Session — Pixelart Impression</title>
+    <title>Book a Session | Pixelart Impression</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="booking.css">
+    <script>document.documentElement.classList.add('js')</script>
     <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
 </head>
 <body>
-<div class="cursor-spot" aria-hidden="true"></div>
-
 <div class="page-wrap">
     <div class="booking-left" aria-hidden="true">
-        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Pixel">
+        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="">
         <div class="bl-overlay"></div>
         <div class="bl-content">
             <div class="bl-logo">
                 <span class="logo-pixel">Pixel</span><span class="logo-art">art</span>
             </div>
-            <p class="bl-tagline">"Your story, beautifully told."</p>
+            <p class="bl-tagline">“Your story, beautifully told.”</p>
         </div>
     </div>
 
     <div class="booking-right">
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Back to Home</a>
 
         <div class="booking-header">
-            <p class="section-label">// Reserve Your Session</p>
+            <p class="section-label">Reserve Your Session</p>
             <h1>Book a Session</h1>
             <p class="booking-sub">Fill in your details and I'll get back to you within 24 hours.</p>
         </div>
@@ -59,7 +60,7 @@
             <div class="field">
                 <label for="phone">WhatsApp Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="+234 000 000 0000" autocomplete="tel" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
             <div class="form-row">
@@ -78,37 +79,35 @@
             <div class="field">
                 <label for="outfit">Outfit Type</label>
                 <input type="text" id="outfit" name="outfit" placeholder="Traditional, casual, formal…" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
             <div class="field">
                 <label for="inspiration">Inspiration / Reference</label>
                 <input type="text" id="inspiration" name="inspiration" placeholder="Paste a link or describe your vision" required>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
             <div class="field">
                 <label for="price">Package</label>
                 <select id="price" name="price" required>
                     <option value="" disabled selected hidden>Select a package</option>
-                    <option value="Indoor shoot, 3 edited photos, studio background (30k/outfit)">Indoor — Studio background, 3 edited photos (₦30k/outfit)</option>
-                    <option value="Indoor shoot, 3 edited photos, aesthetic background (40k/outfit)">Indoor — Aesthetic background, 3 edited photos (₦40k/outfit)</option>
-                    <option value="Outdoor shoot, 4 edited photos (50k/outfit)">Outdoor — 4 edited photos (₦50k/outfit)</option>
-                    <option value="Children indoor session, 3 edited photos (30k/outfit)">Children's Indoor — 3 edited photos (₦30k/outfit)</option>
+                    <option value="Indoor shoot, 3 edited photos, studio background (30k/outfit)">Indoor: studio background, 3 edited photos (₦30k/outfit)</option>
+                    <option value="Indoor shoot, 3 edited photos, aesthetic background (40k/outfit)">Indoor: aesthetic background, 3 edited photos (₦40k/outfit)</option>
+                    <option value="Outdoor shoot, 4 edited photos (50k/outfit)">Outdoor: 4 edited photos (₦50k/outfit)</option>
+                    <option value="Children indoor session, 3 edited photos (30k/outfit)">Children's indoor: 3 edited photos (₦30k/outfit)</option>
                 </select>
-                    <span class="field-error" aria-live="polite"></span>
+                <span class="field-error" aria-live="polite"></span>
             </div>
 
-            <button type="submit" class="submit-btn">Submit Booking Request</button>
-            <button type="button" id="backBtn" class="back-btn">← Go Back</button>
+            <p class="form-status" id="formStatus" role="alert"></p>
+            <button type="submit" class="submit-btn"><span class="submit-label">Submit Booking Request</span></button>
         </form>
     </div>
 </div>
 
 <script src="shared.js"></script>
 <script>
-document.getElementById("backBtn").addEventListener("click", () => history.back());
-
 /* ── Inline field validation ── */
 function showError(input, msg) {
     const err = input.closest('.field').querySelector('.field-error');
@@ -149,11 +148,21 @@ bookingForm.addEventListener('submit', async function(e) {
             hasError = true;
         }
     });
-    if (hasError) return;
+    if (hasError) { bookingForm.querySelector('[aria-invalid="true"]').focus(); return; }
 
-    const btn = bookingForm.querySelector('.submit-btn');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending…';
+    const btn    = bookingForm.querySelector('.submit-btn');
+    const label  = btn.querySelector('.submit-label');
+    const status = document.getElementById('formStatus');
+    const originalText = label.textContent;
+    function fail(msg) {
+        btn.classList.remove('is-sending');
+        label.textContent = originalText;
+        btn.disabled = false;
+        status.textContent = msg;
+    }
+    status.textContent = '';
+    label.textContent = 'Sending…';
+    btn.classList.add('is-sending');
     btn.disabled = true;
 
     try {
@@ -166,14 +175,10 @@ bookingForm.addEventListener('submit', async function(e) {
             window.location.href = 'thank-you.html';
         } else {
             const data = await res.json().catch(() => ({}));
-            btn.textContent = originalText;
-            btn.disabled = false;
-            alert(data.error || 'Something went wrong. Please try again.');
+            fail(data.error || 'Something went wrong. Please try again.');
         }
     } catch (err) {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        alert('Network error. Please check your connection and try again.');
+        fail('Network error. Please check your connection and try again.');
     }
 });
 </script>

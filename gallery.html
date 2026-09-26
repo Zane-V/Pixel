@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixelart Impression Gallery — Browse all photography categories.">
+    <meta name="description" content="Pixelart Impression gallery. Browse every photography category.">
     <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Gallery — Pixelart Impression">
+    <meta property="og:title" content="Gallery | Pixelart Impression">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Browse all photography categories — Beauty, Bridals, Weddings, and more.">
-    <title>Gallery — Pixelart Impression</title>
+    <meta property="og:description" content="Browse all photography categories: Beauty, Bridals, Weddings, and more.">
+    <title>Gallery | Pixelart Impression</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="gallery.css">
+    <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('px-seen'))document.documentElement.classList.add('px-seen')}catch(e){}</script>
     <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
 </head>
 <body>
@@ -23,18 +28,15 @@
     </div>
 </div>
 
-<!-- CURSOR -->
-<div class="cursor-spot" aria-hidden="true"></div>
-
 <!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <div class="lb-backdrop"></div>
-    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">‹</button>
+    <button class="lb-close" id="lbClose" aria-label="Close"><span aria-hidden="true">✕</span></button>
+    <button class="lb-prev"  id="lbPrev"  aria-label="Previous photo"><span aria-hidden="true">‹</span></button>
     <div class="lb-img-wrap">
         <img id="lbImg" src="" alt="Enlarged photo">
     </div>
-    <button class="lb-next"  id="lbNext"  aria-label="Next">›</button>
+    <button class="lb-next"  id="lbNext"  aria-label="Next photo"><span aria-hidden="true">›</span></button>
     <div class="lb-counter" id="lbCounter" aria-live="polite"></div>
 </div>
 
@@ -46,7 +48,7 @@
 </a>
 
 <!-- BACK TO TOP -->
-<button id="btt" aria-label="Back to top">↑</button>
+<button id="btt" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
 
 <!-- HEADER -->
 <header id="site-header">
@@ -77,22 +79,26 @@
 
 <!-- GALLERY HERO -->
 <div class="gallery-hero">
-    <p class="section-label">// Full Collection</p>
+    <div class="gallery-hero-inner">
+    <p class="section-label">Full Collection</p>
     <h1 class="gallery-title-h1">The Gallery</h1>
     <p class="gallery-hero-sub">Every image tells a story. Browse by category or scroll through it all.</p>
+    </div>
 </div>
 
 <!-- CATEGORY STRIP -->
-<nav class="cat-strip" aria-label="Jump to category">
-    <button class="cat-btn active" data-target="all">All</button>
-    <button class="cat-btn" data-target="beauty-section">Beauty</button>
-    <button class="cat-btn" data-target="birthday-section">Birthdays</button>
-    <button class="cat-btn" data-target="bridals-section">Bridals</button>
-    <button class="cat-btn" data-target="lifestyle-section">Lifestyle</button>
-    <button class="cat-btn" data-target="men-section">Men</button>
-    <button class="cat-btn" data-target="pregnancy-section">Pregnancy</button>
-    <button class="cat-btn" data-target="wedding-section">Wedding</button>
-    <!-- <button class="cat-btn" data-target="brands-section">Brands</button> -->
+<nav class="cat-strip" aria-label="Filter by category">
+    <div class="cat-track">
+    <button class="cat-btn active" data-target="all" aria-pressed="true">All</button>
+    <button class="cat-btn" data-target="beauty-section" aria-pressed="false">Beauty</button>
+    <button class="cat-btn" data-target="birthday-section" aria-pressed="false">Birthdays</button>
+    <button class="cat-btn" data-target="bridals-section" aria-pressed="false">Bridals</button>
+    <button class="cat-btn" data-target="lifestyle-section" aria-pressed="false">Lifestyle</button>
+    <button class="cat-btn" data-target="men-section" aria-pressed="false">Men</button>
+    <button class="cat-btn" data-target="pregnancy-section" aria-pressed="false">Pregnancy</button>
+    <button class="cat-btn" data-target="wedding-section" aria-pressed="false">Wedding</button>
+    <!-- <button class="cat-btn" data-target="brands-section" aria-pressed="false">Brands</button> -->
+    </div>
 </nav>
 
 <main>
@@ -100,7 +106,7 @@
     <section class="gal-section" id="beauty-section">
         <div class="gal-section-header">
             <h2>Beauty</h2>
-            <p>"Glamour redefined in every frame — bold, unapologetic, timeless."</p>
+            <p>“Glamour redefined in every frame: bold, unapologetic, timeless.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508412/b1_dtw8no.jpg"  alt="Beauty 1"  loading="lazy">
@@ -132,7 +138,7 @@
     <section class="gal-section" id="birthday-section">
         <div class="gal-section-header">
             <h2>Birthdays</h2>
-            <p>"Framed in love, lit by joy, edited with grace."</p>
+            <p>“Framed in love, lit by joy, edited with grace.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508648/b1_jkbinn.jpg" alt="Birthday 1" loading="lazy">
@@ -147,7 +153,7 @@
     <section class="gal-section" id="bridals-section">
         <div class="gal-section-header">
             <h2>Bridals</h2>
-            <p>"Just a bride, her dress, and a camera capturing forever."</p>
+            <p>“Just a bride, her dress, and a camera capturing forever.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508850/b1_twqqoj.jpg"  alt="Bridal 1"  loading="lazy">
@@ -191,7 +197,7 @@
     <section class="gal-section" id="lifestyle-section">
         <div class="gal-section-header">
             <h2>Lifestyle</h2>
-            <p>"Candid moments, real vibes, and a little magic in between."</p>
+            <p>“Candid moments, real vibes, and a little magic in between.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509004/l1_vigeji.jpg"  alt="Lifestyle 1"  loading="lazy">
@@ -211,7 +217,7 @@
     <section class="gal-section" id="men-section">
         <div class="gal-section-header">
             <h2>Men</h2>
-            <p>"Living the moment. Framed by the lens."</p>
+            <p>“Living the moment. Framed by the lens.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509044/m1_rucvkx.jpg"  alt="Men 1"  loading="lazy">
@@ -234,7 +240,7 @@
     <section class="gal-section" id="pregnancy-section">
         <div class="gal-section-header">
             <h2>Pregnancy</h2>
-            <p>"From a tiny heartbeat to a lifetime of love."</p>
+            <p>“From a tiny heartbeat to a lifetime of love.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509864/p1_cpvilh.jpg" alt="Pregnancy 1" loading="lazy">
@@ -252,7 +258,7 @@
     <section class="gal-section" id="wedding-section">
         <div class="gal-section-header">
             <h2>Wedding</h2>
-            <p>"Forever just found its favourite frame."</p>
+            <p>“Forever just found its favourite frame.”</p>
         </div>
         <div class="gal-grid">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509896/w1_oddlfl.jpg" alt="Wedding 1" loading="lazy">
@@ -265,7 +271,7 @@
     <!-- <section class="gal-section" id="brands-section">
         <div class="gal-section-header">
             <h2>Brands &amp; Commercial</h2>
-            <p>"Visuals that vibe with your brand."</p>
+            <p>“Visuals that vibe with your brand.”</p>
         </div>
         <div class="gal-grid">
             <img src="img/brands/b1.jpg"  alt="Brand 1"  loading="lazy">
@@ -303,28 +309,34 @@
 
 <script src="shared.js"></script>
 <script>
-/* ── Category buttons ── */
-const catBtns = document.querySelectorAll(".cat-btn");
+const sections = Array.from(document.querySelectorAll(".gal-section"));
+const catBtns  = document.querySelectorAll(".cat-btn");
+
+/* ── Images: fade in as they load, keyboard-openable ── */
+document.querySelectorAll(".gal-grid img").forEach(img => {
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    if (img.complete && img.naturalWidth) img.classList.add("is-loaded");
+    else img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+});
+
+/* ── Category filter ── */
 catBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        catBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        catBtns.forEach(b => { b.classList.toggle("active", b === btn); b.setAttribute("aria-pressed", String(b === btn)); });
+        const track = btn.parentElement;
+        track.scrollTo({ left: btn.offsetLeft - (track.clientWidth - btn.offsetWidth) / 2, behavior: "smooth" });
         const target = btn.dataset.target;
-        if (target === "all") {
-            document.querySelectorAll(".gal-section").forEach(s => s.style.display = "");
-        } else {
-            document.querySelectorAll(".gal-section").forEach(s => {
-                s.style.display = s.id === target ? "" : "none";
-            });
-            const sec = document.getElementById(target);
-            if (sec) setTimeout(() => sec.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
-        }
-        // Refresh lightbox image list after category filter changes
-        allImgs = getVisibleImgs();
-        allImgs.forEach((img, i) => {
-            img.style.cursor = "none";
-            img.onclick = () => openLB(i);
+        sections.forEach(s => {
+            const show = target === "all" || s.id === target;
+            s.hidden = !show;
+            if (show) { s.classList.remove("is-entering"); void s.offsetWidth; s.classList.add("is-entering"); }
         });
+        // Sections carry scroll-margin-top for the sticky header + strip
+        const anchor = target === "all" ? sections[0] : document.getElementById(target);
+        if (target !== "all" || anchor.getBoundingClientRect().top < 0) {
+            anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     });
 });
 
@@ -336,18 +348,23 @@ const lbPrev   = document.getElementById("lbPrev");
 const lbNext   = document.getElementById("lbNext");
 const lbCount  = document.getElementById("lbCounter");
 
-// Only include images from currently visible sections
-function getVisibleImgs() {
-    return Array.from(document.querySelectorAll(".gal-section:not([style*='none']) .gal-grid img, .gal-section:not([style]) .gal-grid img"));
-}
-let allImgs = getVisibleImgs();
+let visible = [];
 let cur = 0;
+let opener = null;
 
-function openLB(i) {
-    cur = i;
-    lbImg.src = allImgs[cur].src;
-    lbImg.alt = allImgs[cur].alt;
-    lbCount.textContent = `${cur + 1} / ${allImgs.length}`;
+function visibleImgs() {
+    return sections.filter(s => !s.hidden).flatMap(s => Array.from(s.querySelectorAll(".gal-grid img")));
+}
+function show(i) {
+    cur = (i + visible.length) % visible.length;
+    lbImg.src = visible[cur].src;
+    lbImg.alt = visible[cur].alt;
+    lbCount.textContent = `${cur + 1} / ${visible.length}`;
+}
+function openLB(img) {
+    visible = visibleImgs();
+    opener = img;
+    show(visible.indexOf(img));
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
     lbClose.focus();
@@ -355,23 +372,24 @@ function openLB(i) {
 function closeLB() {
     lightbox.classList.remove("open");
     document.body.style.overflow = "";
+    if (opener) opener.focus({ preventScroll: true });
 }
 function goTo(i) {
-    cur = (i + allImgs.length) % allImgs.length;
-    lbImg.style.opacity = "0";
+    lbImg.classList.add("is-swapping");
     setTimeout(() => {
-        lbImg.src = allImgs[cur].src;
-        lbImg.alt = allImgs[cur].alt;
-        lbCount.textContent = `${cur + 1} / ${allImgs.length}`;
-        lbImg.style.opacity = "1";
-    }, 180);
+        show(i);
+        const done = () => lbImg.classList.remove("is-swapping");
+        if (lbImg.complete) done(); else lbImg.addEventListener("load", done, { once: true });
+    }, 140);
 }
 
-allImgs.forEach((img, i) => {
-    img.style.cursor = "none";
-    img.setAttribute("tabindex", "0");
-    img.addEventListener("click",   () => openLB(i));
-    img.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") openLB(i); });
+document.querySelector("main").addEventListener("click", e => {
+    const img = e.target.closest(".gal-grid img");
+    if (img) openLB(img);
+});
+document.querySelector("main").addEventListener("keydown", e => {
+    const img = e.target.closest(".gal-grid img");
+    if (img && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openLB(img); }
 });
 lbClose.addEventListener("click", closeLB);
 lbPrev.addEventListener("click",  () => goTo(cur - 1));
@@ -391,7 +409,6 @@ lightbox.addEventListener("touchend",   e => {
     const dx = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 50) goTo(dx < 0 ? cur + 1 : cur - 1);
 }, { passive: true });
-
 </script>
 </body>
 </html>

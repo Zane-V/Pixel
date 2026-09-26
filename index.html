@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixelart Impression — Professional Wedding & Portrait Photographer. Capturing timeless, elegant moments.">
+    <meta name="description" content="Pixelart Impression: wedding and portrait photography in Uyo. Timeless, elegant portraits and celebrations.">
     <meta name="theme-color" content="#0a0a0a">
     <meta property="og:title" content="Pixelart Impression">
     <meta property="og:description" content="Professional Wedding & Portrait Photographer in Uyo.">
@@ -15,7 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="index.css">
+    <script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('px-seen'))document.documentElement.classList.add('px-seen')}catch(e){}</script>
     <link rel="shortcut icon" href="img/favicon.jpeg" type="image/x-icon">
 </head>
 <body>
@@ -29,9 +31,6 @@
     </div>
 </div>
 
-<!-- CURSOR -->
-<div class="cursor-spot" aria-hidden="true"></div>
-
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp">
 <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Book via WhatsApp"> -->
@@ -40,7 +39,7 @@
 </a>
 
 <!-- BACK TO TOP -->
-<button id="btt" aria-label="Back to top">↑</button>
+<button id="btt" aria-label="Back to top"><span aria-hidden="true">↑</span></button>
 
 <!-- ═══════════════════ HEADER ═══════════════════ -->
 <header id="site-header">
@@ -76,71 +75,53 @@
 <main>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
-<section class="hero" aria-label="Hero">
+<section class="hero" aria-label="Introduction">
     <div class="hero-text">
         <p class="hero-eyebrow">Wedding &amp; Portrait Photography</p>
-        <h1 class="hero-headline"><span id="typewriter"></span></h1>
-        <p class="hero-body">Your vision, my lens — perfection in every shot.</p>
+        <h1 class="hero-headline">Your story, <em>beautifully</em> told.</h1>
+        <p class="hero-body">Your vision, my lens. Timeless portraits and celebrations, photographed in Uyo.</p>
         <div class="hero-actions">
-            <a href="gallery.html" class="btn-primary">View Gallery</a>
-            <a href="#about" class="btn-ghost">My Story ↓</a>
+            <a href="booking.html" class="btn-primary">Book a Session</a>
+            <a href="gallery.html" class="btn-ghost">View Gallery</a>
         </div>
     </div>
 
     <div class="hero-grid" aria-label="Featured photos">
-        <div class="hg-tall">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506560/first_gsnspa.jpg" alt="Featured shoot 1" loading="eager">
-            <div class="hg-overlay"></div>
-        </div>
-        <div class="hg-col">
-            <div class="hg-short">
-                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506609/second_xsi7k3.jpg" alt="Featured shoot 2" loading="eager">
-                <div class="hg-overlay"></div>
-            </div>
-            <div class="hg-short">
-                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506553/third_o5uzvc.jpg" alt="Featured shoot 3" loading="lazy">
-                <div class="hg-overlay"></div>
-            </div>
-        </div>
-        <div class="hg-wide">
-            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/fourth_dozood.jpg" alt="Featured shoot 4" loading="lazy">
-            <div class="hg-overlay"></div>
-        </div>
-    </div>
-
-    <div class="hero-scroll-hint" aria-hidden="true">
-        <span class="scroll-line"></span>
-        <span class="scroll-label">Scroll</span>
+        <figure class="hg hg-tall">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506560/first_gsnspa.jpg" alt="Woman in a black gown posing in the studio" fetchpriority="high">
+        </figure>
+        <figure class="hg hg-a">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506609/second_xsi7k3.jpg" alt="Man in a light jacket crouching against a blue backdrop">
+        </figure>
+        <figure class="hg hg-b">
+            <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506553/third_o5uzvc.jpg" alt="Portrait of a woman seated outdoors">
+        </figure>
     </div>
 </section>
 
 <!-- ═══════════════════ STATS STRIP ═══════════════════ -->
-<div class="stats-strip reveal">
-    <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Sessions Shot</span></div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat"><span class="stat-num">7</span><span class="stat-label">Categories</span></div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
-    <div class="stat-divider" aria-hidden="true"></div>
-    <div class="stat"><span class="stat-num">Uyo</span><span class="stat-label">Based</span></div>
+<div class="stats-strip">
+    <div class="stat reveal" style="--i:0"><span class="stat-num">200+</span><span class="stat-label">Sessions Shot</span></div>
+    <div class="stat reveal" style="--i:1"><span class="stat-num">7</span><span class="stat-label">Categories</span></div>
+    <div class="stat reveal" style="--i:2"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
+    <div class="stat reveal" style="--i:3"><span class="stat-num">Uyo</span><span class="stat-label">Based</span></div>
 </div>
 
 <!-- ═══════════════════ ABOUT ═══════════════════ -->
-<section class="about reveal" id="about" aria-label="About">
-    <div class="about-img-wrap">
-        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Daniel — Pixelart Photographer" loading="lazy">
+<section class="about" id="about" aria-label="About">
+    <div class="about-img-wrap reveal">
+        <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773506542/Daniel_yibxcj.jpg" alt="Portrait of Daniel, the photographer behind Pixelart" loading="lazy">
         <div class="about-img-frame" aria-hidden="true"></div>
         <div class="about-badge" aria-hidden="true">
             <span>Pixel</span><br><span>art</span>
         </div>
     </div>
 
-    <div class="about-text">
-        <p class="section-label">// About Me</p>
+    <div class="about-text reveal" style="--i:1">
         <h2 class="section-title">Hello, I'm <em>PixelArt</em></h2>
         <p class="about-body">
             Sometimes I look back and smile at how far I've come.
-            I started photography from scratch — no fancy gear, no studio,
+            I started photography from scratch: no fancy gear, no studio,
             just pure passion and curiosity. I remember the early days
             of experimenting, making mistakes, learning little by little,
             and falling in love with the process of capturing moments.
@@ -148,7 +129,7 @@
         <p class="about-body">
             Step by step, through dedication and consistency, I've grown
             from those humble beginnings into a professional photographer.
-            And I'm still growing — pushing myself to create even more
+            And I'm still growing, pushing myself to create even more
             stunning, creative, and timeless images for every client
             who trusts me.
         </p>
@@ -159,146 +140,133 @@
 <!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
 <section class="portfolio" id="portfolio" aria-label="Portfolio">
     <div class="portfolio-header reveal">
-        <p class="section-label">// Selected Work</p>
         <h2 class="section-title">Portfolio</h2>
-        <p class="portfolio-sub">Some of my recent works — click any category to explore the full gallery.</p>
+        <p class="portfolio-sub">A few recent sessions. Pick a category to see the full set.</p>
     </div>
 
-    <div class="portfolio-grid reveal">
+    <div class="portfolio-grid">
 
-        <a href="gallery.html#beauty-section" class="pg-card pg-large" aria-label="Beauty Shoots">
+        <a href="gallery.html#beauty-section" class="pg-card pg-large reveal" style="--i:0" aria-label="Beauty Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508428/b5_h706fv.jpg" alt="Beauty shoot" loading="lazy">
-            <div class="pg-card-inner">
-                <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508415/b2_ub8xlr.jpg" alt="" loading="lazy" class="pg-hover-img">
-            </div>
             <div class="pg-info">
-                <span class="pg-num">01</span>
                 <span class="pg-title">Beauty</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#bridals-section" class="pg-card" aria-label="Bridal Shoots">
+        <a href="gallery.html#bridals-section" class="pg-card reveal" style="--i:1" aria-label="Bridal Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508850/b1_twqqoj.jpg" alt="Bridal shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">02</span>
                 <span class="pg-title">Bridals</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#birthday-section" class="pg-card" aria-label="Birthday Shoots">
+        <a href="gallery.html#birthday-section" class="pg-card reveal" style="--i:2" aria-label="Birthday Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773508648/b1_jkbinn.jpg" alt="Birthday shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">03</span>
                 <span class="pg-title">Birthdays</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#men-section" class="pg-card pg-tall" aria-label="Men Shoots">
+        <a href="gallery.html#men-section" class="pg-card pg-tall reveal" style="--i:3" aria-label="Men Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509044/m1_rucvkx.jpg" alt="Men shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">04</span>
                 <span class="pg-title">Men</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#pregnancy-section" class="pg-card" aria-label="Pregnancy Shoots">
+        <a href="gallery.html#pregnancy-section" class="pg-card reveal" style="--i:0" aria-label="Pregnancy Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509864/p1_cpvilh.jpg" alt="Pregnancy shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">05</span>
                 <span class="pg-title">Pregnancy</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#lifestyle-section" class="pg-card" aria-label="Lifestyle Shoots">
+        <a href="gallery.html#lifestyle-section" class="pg-card reveal" style="--i:1" aria-label="Lifestyle Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509028/l8_a9qjhe.jpg" alt="Lifestyle Shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">06</span>
                 <span class="pg-title">Lifestyle</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <a href="gallery.html#wedding-section" class="pg-card pg-wide" aria-label="Wedding Shoots">
+        <a href="gallery.html#wedding-section" class="pg-card pg-wide reveal" style="--i:2" aria-label="Wedding Shoots">
             <img src="https://res.cloudinary.com/dx3j36ymx/image/upload/v1773509896/w1_oddlfl.jpg" alt="Wedding shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">07</span>
                 <span class="pg-title">Weddings</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a>
 
-        <!-- <a href="gallery.html#brands-section" class="pg-card" aria-label="Brands & Commercial">
+        <!-- <a href="gallery.html#brands-section" class="pg-card reveal" style="--i:3" aria-label="Brands & Commercial">
             <img src="img/brands/b1.jpg" alt="Brand shoot" loading="lazy">
             <div class="pg-info">
-                <span class="pg-num">08</span>
                 <span class="pg-title">Brands</span>
-                <span class="pg-arrow">→</span>
+                <span class="pg-arrow" aria-hidden="true">→</span>
             </div>
         </a> -->
 
     </div>
 
     <div class="portfolio-cta reveal">
-        <a href="gallery.html" class="btn-primary">Explore Full Gallery</a>
+        <a href="gallery.html" class="btn-ghost">View Gallery</a>
     </div>
 </section>
 
 <!-- ═══════════════════ CONTACT ═══════════════════ -->
-<section class="contact reveal" id="contact" aria-label="Contact">
-    <div class="contact-left">
-        <p class="section-label">// Get In Touch</p>
+<section class="contact" id="contact" aria-label="Contact">
+    <div class="contact-left reveal">
         <h2 class="section-title">I'd love to hear<br><em>from you</em></h2>
-        <p class="contact-body">Whether you're interested in booking a photoshoot or just want to make enquiries — reach out. Every great photo starts with a conversation.</p>
+        <p class="contact-body">Whether you're interested in booking a photoshoot or just want to ask a question, reach out. Every great photo starts with a conversation.</p>
         <a href="booking.html" class="btn-primary">Book a Session</a>
     </div>
 
-    <div class="contact-right">
+    <div class="contact-right reveal" style="--i:1">
         <div class="social-list" aria-label="Social media links">
             <a href="https://www.facebook.com/share/1GLXQd9kSv/" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/fb.png" alt="Facebook">
+                <img src="img/fb.png" alt="">
                 <div class="social-text">
                     <span class="social-platform">Facebook</span>
                     <span class="social-handle">Daniel Eyo</span>
                 </div>
-                <span class="social-arrow">↗</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
             <a href="https://www.instagram.com/pixelart_shotit?igsh=NHVhY256bnkxajBo" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/insta.png" alt="Instagram">
+                <img src="img/insta.png" alt="">
                 <div class="social-text">
                     <span class="social-platform">Instagram</span>
                     <span class="social-handle">@pixelart_shotit</span>
                 </div>
-                <span class="social-arrow">↗</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
             <a href="https://x.com/eyodaniel222?t=sWx9hCiADy-Ey0B1OX_ykg&s=09" class="social-item" target="_blank" rel="noopener noreferrer">
-                <img src="img/x.png" alt="X / Twitter">
+                <img src="img/x.png" alt="">
                 <div class="social-text">
                     <span class="social-platform">X (Twitter)</span>
                     <span class="social-handle">@eyodaniel222</span>
                 </div>
-                <span class="social-arrow">↗</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
-<a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="social-item" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/2349167486667?text=Hi!%20Daniel,%20I%20came%20from%20your%20website%20and%20I%20would%20like%20to%20book%20a%20session" class="social-item" target="_blank" rel="noopener noreferrer">
             <!-- <a href="https://wa.me/message/LBJRGPDP47MJP1" class="social-item" target="_blank" rel="noopener noreferrer"> -->
-                <img src="img/whatsapp.png" alt="WhatsApp">
+                <img src="img/whatsapp.png" alt="">
                 <div class="social-text">
                     <span class="social-platform">WhatsApp</span>
                     <span class="social-handle">09167486667</span>
                 </div>
-                <span class="social-arrow">↗</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
             <a href="mailto:danielpixel222@gmail.com?subject=Hello" class="social-item">
-                <img src="img/email.png" alt="Email">
+                <img src="img/email.png" alt="">
                 <div class="social-text">
                     <span class="social-platform">Email</span>
                     <span class="social-handle">danielpixel222@gmail.com</span>
                 </div>
-                <span class="social-arrow">↗</span>
+                <span class="social-arrow" aria-hidden="true">↗</span>
             </a>
         </div>
     </div>
@@ -315,41 +283,6 @@
 </footer>
 
 <script src="shared.js"></script>
-<script>
-/* ── Typewriter ── */
-(function () {
-    const phrases = [
-        "Elegance in Every Frame.",
-        "Timeless. Refined. Captured.",
-        "Where Moments Become Art.",
-        "Framing Perfection.",
-        "Your Story, Beautifully Told.",
-        "Precision. Passion. Photography.",
-        "Capturing Grace, Creating Legacy.",
-    ];
-    let pi = 0, ci = 0, del = false;
-    const tw = document.getElementById("typewriter");
-    if (!tw) return;
-    function type() {
-        const cur = phrases[pi];
-        tw.textContent = del ? cur.substring(0, --ci) : cur.substring(0, ++ci);
-        if (!del && ci === cur.length) { del = true; setTimeout(type, 1400); return; }
-        if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
-        setTimeout(type, del ? 90 : 150);
-    }
-    type();
-})();
-
-/* ── Scroll reveal ── */
-(function () {
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
-})();
-</script>
 
 </body>
 </html>
